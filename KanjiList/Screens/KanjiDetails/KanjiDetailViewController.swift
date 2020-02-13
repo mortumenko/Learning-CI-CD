@@ -34,7 +34,10 @@ protocol KanjiDetailViewControllerDelegate: class {
 }
 
 
-class KanjiDetailViewController: UIViewController {
+class KanjiDetailViewController: UIViewController, CoordinatedController  {
+    
+    // MARK: - CoordinatedController
+    var currentCoordinator: Coordinator?
   
     // MARK: - Variables
     var selectedKanji: Kanji? {
@@ -66,7 +69,7 @@ class KanjiDetailViewController: UIViewController {
     }
     
     deinit {
-        print("Deinit \(self)")
+        print("⚠️ Deinit \(self)")
     }
 
 }

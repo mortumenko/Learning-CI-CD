@@ -34,7 +34,10 @@ protocol KanjiListViewControllerDelegate: class {
 }
 
 
-class KanjiListViewController: UIViewController {
+class KanjiListViewController: UIViewController, CoordinatedController {
+    
+    // MARK: - CoordinatedController
+    var currentCoordinator: Coordinator?
     
   // MARK: - Outlets
   @IBOutlet weak var kanjiListTableView: UITableView! {
@@ -56,7 +59,7 @@ class KanjiListViewController: UIViewController {
     weak var delegate: KanjiListViewControllerDelegate?
   
     deinit {
-        print("Deinit \(self)")
+        print("⚠️ Deinit \(self)")
     }
      /*
      This code means that KanjiDetailViewController knows about the next UIViewController, which in this case is KanjiListViewController.

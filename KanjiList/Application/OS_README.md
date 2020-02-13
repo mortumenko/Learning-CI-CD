@@ -22,6 +22,7 @@
 
 7. I'd recommend to review all stuff about references between Coordinator parent / Coordinator child / VC. See another branch `MemoryManagement` 
 
+8. For work with `UIStoryboard`s instead of xibs see all commented code with phrase _Extras: Coordinator Pattern with Storyboards_
 
 
 
@@ -39,3 +40,15 @@ Downsides. Too knotted that can leads to issues:
 1. Every VC should adopt Protocol `CoordinatedVC` with one strong property ‘coordinator’
 2. When coordinator creates VC it should assign itself to property ‘coordinator’ in VC. 
 Then ARC do all work for you.  Bingo!
+
+Proofs:
+
+1 - go to last screen **Kanji List for Word**
+
+2 - back to details screen:
+Deinit `KanjiListViewController`
+Deinit `WordBasedKanjiListCoordinator`
+
+3 - back to all Kanji list:
+Deinit `KanjiDetailViewController`
+Deinit `KanjiDetailCoordinator`

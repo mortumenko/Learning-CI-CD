@@ -8,10 +8,7 @@ class AllKanjiListCoordinator: Coordinator {
     
     private let presenter: UINavigationController  // 1
     private let allKanjiList: [Kanji]  // 2
-    #warning("OS: why do we need strong reference ? This leads to additional +1 counted reference (p.6 in OS_README.md)")
-    private var kanjiListViewController: KanjiListViewController? // 3
     private let kanjiStorage: KanjiStorage // 4
-    private var kanjiDetailCoordinator: KanjiDetailCoordinator?
 
     // OS: all info that knows only current VC can't be passed directily from one VC to another, but can into initialization of specific coordinator
     init(presenter: UINavigationController, kanjiStorage: KanjiStorage) {
@@ -21,7 +18,7 @@ class AllKanjiListCoordinator: Coordinator {
     }
     
     deinit {
-        print("Deinit \(self)")
+        print("⚠️ Deinit \(self)")
     }
 
     func start() {
@@ -30,7 +27,7 @@ class AllKanjiListCoordinator: Coordinator {
         kanjiListViewController.kanjiList = allKanjiList
         presenter.pushViewController(kanjiListViewController, animated: true)  // 7
 
-        self.kanjiListViewController = kanjiListViewController
+        kanjiListViewController.currentCoordinator = self
         kanjiListViewController.delegate = self
     }
 }
@@ -46,8 +43,5 @@ extension AllKanjiListCoordinator: KanjiListViewControllerDelegate {
                                                             kanji: selectedKanji,
                                                             kanjiStorage: kanjiStorage)
         kanjiDetailCoordinator.start()
-
-        // OS: be awary that this Coordination is alive (see p.5 about strong reference in OS_README.md)
-        self.kanjiDetailCoordinator = kanjiDetailCoordinator
     }
 }

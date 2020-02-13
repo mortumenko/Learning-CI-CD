@@ -11,7 +11,7 @@ class  WordBasedKanjiListCoordinator: Coordinator {
     private let kanjiStorage: KanjiStorage // 4
     
     deinit {
-        print("Deinit \(self)")
+        print("⚠️ Deinit \(self)")
     }
     
     init(presenter: UINavigationController, theKanji: String, kanjiStorage: KanjiStorage) {
@@ -21,7 +21,6 @@ class  WordBasedKanjiListCoordinator: Coordinator {
         self.kanjiStorage = kanjiStorage
         chosenKanjiList = kanjiStorage.allKanji()  // 5
     }
-
     
     func start() {
         print("WordBasedKanjiListCoordinator -> start")
@@ -32,6 +31,8 @@ class  WordBasedKanjiListCoordinator: Coordinator {
         wordKanjiListViewController.title = kanjiWord
         wordKanjiListViewController.cellAccessoryType = .none
         presenter.pushViewController(wordKanjiListViewController, animated: true)
+        
+        wordKanjiListViewController.currentCoordinator = self
     }
     
 }
