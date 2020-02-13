@@ -18,7 +18,11 @@
 
 5. Previouse coordinator should keep strong reference to next coordinator if next coordinator after performing navigation actions can be used as delegate of VC (that was created in `start()` of next).  But in case of strong ref this Coordination is alive even if his VC was popped, until this property (property to child coordinator) will be reassigned. You are welcome to think about new method in delegate of VC for pop event to cleanup resources
 
-6. Also in case if `Coordinator` keeps strong reference to a new VC this VC will live untill coordinator is reassigned. So I commented this reference  in `AllKanjiListCoordinator` and `KanjiDetailCoordinator`
+6. Also in case if `Coordinator` keeps strong reference to a new VC this VC will live untill coordinator is reassigned. So I'd comment this reference  in `AllKanjiListCoordinator` and `KanjiDetailCoordinator`. Example: all this objects were deallocted only when I returned back to root and made one step ahead 
+Deinit `KanjiDetailCoordinator`
+Deinit `KanjiDetailViewController`: 0x7ff920793f30>
+Deinit `WordBasedKanjiListCoordinator`
 
 7. I'd recommend to review all stuff about references between Coordinator parent / Coordinator child / VC. See another branch `MemoryManagement` 
 
+8. For work with `UIStoryboard`s instead of xibs see all commented code with phrase _Extras: Coordinator Pattern with Storyboards_
