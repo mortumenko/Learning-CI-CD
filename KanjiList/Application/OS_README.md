@@ -22,3 +22,20 @@
 
 7. I'd recommend to review all stuff about references between Coordinator parent / Coordinator child / VC. See another branch `MemoryManagement` 
 
+
+
+
+## MemoryManagement
+
+### Suggestion #1: Cleanup via additional pop-method in every VC protocol (for example `CoordinatedVC`)
+Downsides. Too knotted that can leads to issues:
+1. Every VC must have action from backbutton
+2. Add method willBePopped to all VCs’ protocols and use it to notify related Coordinator if back pressed
+3. Coord should know his parent (!?!) 
+4. Coord should purge itself from parent’s property
+
+
+### Suggestion #2 **MY CHOISE**: Hold strong ref to Coordinator in VC that is introduced by this Coordinator. So since VC will be released by navigation stack - coordinator will be released too. 
+1. Every VC should adopt Protocol `CoordinatedVC` with one strong property ‘coordinator’
+2. When coordinator creates VC it should assign itself to property ‘coordinator’ in VC. 
+Then ARC do all work for you.  Bingo!
