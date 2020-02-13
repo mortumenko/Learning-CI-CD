@@ -20,4 +20,5 @@
 
 6. Also in case if `Coordinator` keeps strong reference to a new VC this VC will live untill coordinator is reassigned. So I commented this reference  in `AllKanjiListCoordinator` and `KanjiDetailCoordinator`
 
-7. I'd recommend to review all stuff about references between Coordinator parent / Coordinator child / VC
+7. I'd recommend to review all stuff about references between Coordinator parent / Coordinator child / VC. See another branch `MemoryManagement` 
+

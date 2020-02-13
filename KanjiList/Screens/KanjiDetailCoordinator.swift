@@ -12,11 +12,12 @@ class KanjiDetailCoordinator: Coordinator {
     //let viewController = KanjiDetailViewController.instantiateViewController()
 
     #warning("OS: why do we need strong reference ? This leads to additional +1 counted reference (p.6 in OS_README.md)")
-  //private var kanjiDetailViewController: KanjiDetailViewController? // 2
+  private var kanjiDetailViewController: KanjiDetailViewController? // 2
     // OS: seems like is not used
     private var wordKanjiListViewController: KanjiListViewController? // 3
   private let kanjiStorage: KanjiStorage  // 4
   private let kanji: Kanji  // 5
+    var reusedListVCCoordinator: Coordinator?
 
   init(presenter: UINavigationController, // 6
        kanji: Kanji,
@@ -37,7 +38,7 @@ class KanjiDetailCoordinator: Coordinator {
     kanjiDetailViewController.selectedKanji = kanji
 
     presenter.pushViewController(kanjiDetailViewController, animated: true) // 8
-    //self.kanjiDetailViewController = kanjiDetailViewController
+    self.kanjiDetailViewController = kanjiDetailViewController
     kanjiDetailViewController.delegate = self
   }
 
@@ -65,6 +66,6 @@ extension KanjiDetailCoordinator: KanjiDetailViewControllerDelegate {
     reusedListVCCoord.start()
     
     //OS: see p.5 about strong reference in OS_README.md
-    //self.reusedListVCCoordinator = reusedListVCCoord
+    self.reusedListVCCoordinator = reusedListVCCoord
   }
 }

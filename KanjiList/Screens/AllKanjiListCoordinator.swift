@@ -9,7 +9,7 @@ class AllKanjiListCoordinator: Coordinator {
     private let presenter: UINavigationController  // 1
     private let allKanjiList: [Kanji]  // 2
     #warning("OS: why do we need strong reference ? This leads to additional +1 counted reference (p.6 in OS_README.md)")
-    //private var kanjiListViewController: KanjiListViewController? // 3
+    private var kanjiListViewController: KanjiListViewController? // 3
     private let kanjiStorage: KanjiStorage // 4
     private var kanjiDetailCoordinator: KanjiDetailCoordinator?
 
@@ -30,7 +30,7 @@ class AllKanjiListCoordinator: Coordinator {
         kanjiListViewController.kanjiList = allKanjiList
         presenter.pushViewController(kanjiListViewController, animated: true)  // 7
 
-        //self.kanjiListViewController = kanjiListViewController
+        self.kanjiListViewController = kanjiListViewController
         kanjiListViewController.delegate = self
     }
 }
