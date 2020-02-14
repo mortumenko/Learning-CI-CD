@@ -22,11 +22,26 @@ platform :ios do
     
   end
 
+
+# ✅ FIRST - CLEAN
+  desc "Cleans the project"
+  lane :osclean do
+   xcclean
+  end
+
+# ✅ SECOND - BUILD
+  desc "Builds the project"
+  lane :osbuild do
+   xcbuild
+  end
+
+# ✅ THIRD - TEST
   desc "Runs all the tests"
   lane :test do
     scan
   end
 
+# ✅ FORTH - SUBMIT BETA
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
@@ -38,6 +53,7 @@ platform :ios do
     # You can also use other beta testing services here (run `fastlane actions`)
   end
 
+# ✅ FIFTH - DEPLOY
   desc "Deploy a new version to the App Store"
   lane :release do
     # match(type: "appstore")

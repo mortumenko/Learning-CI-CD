@@ -30,6 +30,16 @@ xcode-select --install
 
 # Available Actions
 ## iOS
+### ios osclean
+```
+fastlane ios osclean
+```
+Cleans the project
+### ios osbuild
+```
+fastlane ios osbuild
+```
+Builds the project
 ### ios test
 ```
 fastlane ios test
