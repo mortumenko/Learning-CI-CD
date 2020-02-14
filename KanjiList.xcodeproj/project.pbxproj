@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18BA64D920377D0300593D25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BA64D820377D0300593D25 /* LaunchScreen.storyboard */; };
+		3394855723F6D08D00FCCAB8 /* KanjiListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3394855623F6D08D00FCCAB8 /* KanjiListTests.swift */; };
 		33AAD5B223F4451C002DBC5F /* WordBasedKanjiListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD5B123F4451C002DBC5F /* WordBasedKanjiListCoordinator.swift */; };
 		33F0F65C23F4077900899BD8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F0F65B23F4077900899BD8 /* Coordinator.swift */; };
 		33F0F65F23F4082000899BD8 /* KanjiListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F0F65D23F4082000899BD8 /* KanjiListViewController.xib */; };
@@ -30,8 +31,21 @@
 		C1345B051F9E08BA00612B82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1345B041F9E08BA00612B82 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		3394855923F6D08D00FCCAB8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1345AF21F9E08B900612B82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C1345AF91F9E08BA00612B82;
+			remoteInfo = KanjiList;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		18BA64D820377D0300593D25 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3394855423F6D08D00FCCAB8 /* KanjiListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KanjiListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3394855623F6D08D00FCCAB8 /* KanjiListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiListTests.swift; sourceTree = "<group>"; };
+		3394855823F6D08D00FCCAB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33AAD5B123F4451C002DBC5F /* WordBasedKanjiListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordBasedKanjiListCoordinator.swift; sourceTree = "<group>"; };
 		33F0F65B23F4077900899BD8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		33F0F65D23F4082000899BD8 /* KanjiListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KanjiListViewController.xib; sourceTree = "<group>"; };
@@ -58,6 +72,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		3394855123F6D08D00FCCAB8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C1345AF71F9E08BA00612B82 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -68,6 +89,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3394855523F6D08D00FCCAB8 /* KanjiListTests */ = {
+			isa = PBXGroup;
+			children = (
+				3394855623F6D08D00FCCAB8 /* KanjiListTests.swift */,
+				3394855823F6D08D00FCCAB8 /* Info.plist */,
+			);
+			path = KanjiListTests;
+			sourceTree = "<group>";
+		};
 		4323D3DD1FAD0C6E00F0FB1E /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				C1345AFC1F9E08BA00612B82 /* KanjiList */,
+				3394855523F6D08D00FCCAB8 /* KanjiListTests */,
 				C1345AFB1F9E08BA00612B82 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -152,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				C1345AFA1F9E08BA00612B82 /* KanjiList.app */,
+				3394855423F6D08D00FCCAB8 /* KanjiListTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,6 +205,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		3394855323F6D08D00FCCAB8 /* KanjiListTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3394855B23F6D08D00FCCAB8 /* Build configuration list for PBXNativeTarget "KanjiListTests" */;
+			buildPhases = (
+				3394855023F6D08D00FCCAB8 /* Sources */,
+				3394855123F6D08D00FCCAB8 /* Frameworks */,
+				3394855223F6D08D00FCCAB8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3394855A23F6D08D00FCCAB8 /* PBXTargetDependency */,
+			);
+			name = KanjiListTests;
+			productName = KanjiListTests;
+			productReference = 3394855423F6D08D00FCCAB8 /* KanjiListTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		C1345AF91F9E08BA00612B82 /* KanjiList */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1345B0C1F9E08BA00612B82 /* Build configuration list for PBXNativeTarget "KanjiList" */;
@@ -196,10 +246,15 @@
 		C1345AF21F9E08B900612B82 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
+				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Kolos;
 				TargetAttributes = {
+					3394855323F6D08D00FCCAB8 = {
+						CreatedOnToolsVersion = 11.3.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C1345AF91F9E08BA00612B82;
+					};
 					C1345AF91F9E08BA00612B82 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
@@ -220,11 +275,19 @@
 			projectRoot = "";
 			targets = (
 				C1345AF91F9E08BA00612B82 /* KanjiList */,
+				3394855323F6D08D00FCCAB8 /* KanjiListTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		3394855223F6D08D00FCCAB8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C1345AF81F9E08BA00612B82 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -243,6 +306,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		3394855023F6D08D00FCCAB8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3394855723F6D08D00FCCAB8 /* KanjiListTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C1345AF61F9E08BA00612B82 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -265,6 +336,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		3394855A23F6D08D00FCCAB8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C1345AF91F9E08BA00612B82 /* KanjiList */;
+			targetProxy = 3394855923F6D08D00FCCAB8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		C1345B011F9E08BA00612B82 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -277,6 +356,45 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		3394855C23F6D08D00FCCAB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T4ZZK7HJ6V;
+				INFOPLIST_FILE = KanjiListTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = personal.KanjiListTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KanjiList.app/KanjiList";
+			};
+			name = Debug;
+		};
+		3394855D23F6D08D00FCCAB8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T4ZZK7HJ6V;
+				INFOPLIST_FILE = KanjiListTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = personal.KanjiListTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KanjiList.app/KanjiList";
+			};
+			name = Release;
+		};
 		C1345B0A1F9E08BA00612B82 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -396,7 +514,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/KanjiList/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.razeware;
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.mortum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -411,7 +529,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "$(SRCROOT)/KanjiList/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.razeware;
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.mortum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -421,6 +539,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3394855B23F6D08D00FCCAB8 /* Build configuration list for PBXNativeTarget "KanjiListTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3394855C23F6D08D00FCCAB8 /* Debug */,
+				3394855D23F6D08D00FCCAB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C1345AF51F9E08B900612B82 /* Build configuration list for PBXProject "KanjiList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
