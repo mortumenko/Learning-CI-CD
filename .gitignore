@@ -1,3 +1,4 @@
+
 # Created by https://www.gitignore.io/api/swift
 # Edit at https://www.gitignore.io/?templates=swift
 
@@ -55,3 +56,6 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+
+report.html
+report.junit
