@@ -42,7 +42,7 @@ class KanjiListTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         
-        XCTAssert(1 == 2, "❌ Everything is bad")
+        XCTAssert(2 == 2, "❌ Everything is bad")
     }
 
     func testPassed() {

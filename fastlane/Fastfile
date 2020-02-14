@@ -18,33 +18,32 @@ default_platform :ios
 platform :ios do
   before_all do
     # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
-    
-    
   end
 
 
-# ✅ FIRST - CLEAN
+# CLEAN
   desc "Cleans the project"
   lane :osclean do
    xcclean
   end
 
-# ✅ SECOND - BUILD
+# BUILD
   desc "Builds the project"
   lane :osbuild do
    xcbuild
   end
 
-# ✅ THIRD - TEST
+# TEST
   desc "Runs all the tests"
   lane :test do
     scan
   end
 
-# ✅ FORTH - SUBMIT BETA
+# SUBMIT BETA
   desc "Submit a new Beta Build to Apple TestFlight"
   desc "This will also make sure the profile is up to date"
   lane :beta do
+    xcclean
     # match(type: "appstore") # more information: https://codesigning.guide
     gym # Build your app - more options available
     pilot
@@ -53,7 +52,7 @@ platform :ios do
     # You can also use other beta testing services here (run `fastlane actions`)
   end
 
-# ✅ FIFTH - DEPLOY
+# DEPLOY
   desc "Deploy a new version to the App Store"
   lane :release do
     # match(type: "appstore")
