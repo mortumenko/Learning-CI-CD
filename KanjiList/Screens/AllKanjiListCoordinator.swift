@@ -6,7 +6,7 @@ import UIKit
 
 class AllKanjiListCoordinator: Coordinator {
     
-    private let presenter: UINavigationController  // 1
+    let presenter: UINavigationController  // 1
     private let allKanjiList: [Kanji]  // 2
     private let kanjiStorage: KanjiStorage // 4
 

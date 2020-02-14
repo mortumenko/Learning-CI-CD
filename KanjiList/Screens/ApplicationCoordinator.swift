@@ -6,6 +6,10 @@ import UIKit
 
 class ApplicationCoordinator: Coordinator {
     
+    var presenter: UINavigationController {
+        return rootViewController
+    }
+    
     private let kanjiStorage: KanjiStorage //  1
     private let window: UIWindow  // 2
     private let rootViewController: UINavigationController  // 3

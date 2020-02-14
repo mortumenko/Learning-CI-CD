@@ -5,7 +5,7 @@ import UIKit
 
 class  WordBasedKanjiListCoordinator: Coordinator {
     
-    private let presenter: UINavigationController  // 1
+    let presenter: UINavigationController  // 1
     private let kanjiWord: String
     private let chosenKanjiList: [Kanji]  // 2
     private let kanjiStorage: KanjiStorage // 4

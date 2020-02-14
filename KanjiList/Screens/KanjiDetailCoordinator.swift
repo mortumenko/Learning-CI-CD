@@ -10,7 +10,7 @@ class KanjiDetailCoordinator: Coordinator {
     //let viewController = KanjiDetailViewController.instantiateViewController()
     
     
-    private let presenter: UINavigationController  // 1
+    let presenter: UINavigationController  // 1
     private let kanjiStorage: KanjiStorage  // 4
     private let kanji: Kanji  // 5
 
