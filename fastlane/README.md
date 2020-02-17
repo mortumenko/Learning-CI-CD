@@ -45,6 +45,11 @@ Builds the project
 fastlane ios test
 ```
 Runs all the tests
+### ios ostest
+```
+fastlane ios ostest
+```
+Runs the tests with custom settings
 ### ios beta
 ```
 fastlane ios beta
