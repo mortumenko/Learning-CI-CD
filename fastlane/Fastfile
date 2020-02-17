@@ -17,7 +17,7 @@ default_platform :ios
 
 platform :ios do
   before_all do
-    # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
+    ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
   end
 
 
@@ -33,11 +33,28 @@ platform :ios do
    xcbuild
   end
 
-# TEST
+# TESTS
   desc "Runs all the tests"
   lane :test do
-    scan
+    	scan
+	slack(
+  		message: "App successfully ruined tests",
+  		channel: "#test_fastlane", 
+  		success: true
+	)
   end
+
+# CUSTOMIZED TESTS 
+	desc "Runs the tests with custom settings"
+
+	lane :ostest do
+# run_tests # ⚠️ [15:49:35]: Could not find action, lane or variable 'run_tests'. 
+	scan(project: "KanjiList.xcodeproj", #workspace: "Example.xcworkspace"
+	code_coverage: true,
+	#xctestrun:"KanjiList/TestPlan.xctestrun",
+        device: "iPhone 11") #devices: ["iPhone 11", "iPad Pro"])
+end
+
 
 # SUBMIT BETA
   desc "Submit a new Beta Build to Apple TestFlight"
