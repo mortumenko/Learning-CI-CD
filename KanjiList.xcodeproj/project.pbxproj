@@ -10,6 +10,7 @@
 		18BA64D920377D0300593D25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BA64D820377D0300593D25 /* LaunchScreen.storyboard */; };
 		3394855723F6D08D00FCCAB8 /* KanjiListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3394855623F6D08D00FCCAB8 /* KanjiListTests.swift */; };
 		33AAD5B223F4451C002DBC5F /* WordBasedKanjiListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD5B123F4451C002DBC5F /* WordBasedKanjiListCoordinator.swift */; };
+		33CE120723FAD6B60043EE12 /* TestPlan.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 33CE120623FAD6B50043EE12 /* TestPlan.xctestplan */; };
 		33F0F65C23F4077900899BD8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F0F65B23F4077900899BD8 /* Coordinator.swift */; };
 		33F0F65F23F4082000899BD8 /* KanjiListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F0F65D23F4082000899BD8 /* KanjiListViewController.xib */; };
 		33F0F66023F4082000899BD8 /* KanjiDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F0F65E23F4082000899BD8 /* KanjiDetailViewController.xib */; };
@@ -47,6 +48,7 @@
 		3394855623F6D08D00FCCAB8 /* KanjiListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiListTests.swift; sourceTree = "<group>"; };
 		3394855823F6D08D00FCCAB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33AAD5B123F4451C002DBC5F /* WordBasedKanjiListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordBasedKanjiListCoordinator.swift; sourceTree = "<group>"; };
+		33CE120623FAD6B50043EE12 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = file; name = TestPlan.xctestplan; path = KanjiList/TestPlan.xctestplan; sourceTree = SOURCE_ROOT; };
 		33F0F65B23F4077900899BD8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		33F0F65D23F4082000899BD8 /* KanjiListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KanjiListViewController.xib; sourceTree = "<group>"; };
 		33F0F65E23F4082000899BD8 /* KanjiDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KanjiDetailViewController.xib; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		437264311FAD04F400A22393 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				33CE120623FAD6B50043EE12 /* TestPlan.xctestplan */,
 				437264321FAD04F400A22393 /* AppDelegate.swift */,
 				33F0F66923F43D6800899BD8 /* OS_README.md */,
 				437264331FAD04F400A22393 /* Info.plist */,
@@ -297,6 +300,7 @@
 				4323D3E51FAD110200F0FB1E /* KanjiDataTableViewCell.xib in Resources */,
 				33F0F65F23F4082000899BD8 /* KanjiListViewController.xib in Resources */,
 				18BA64D920377D0300593D25 /* LaunchScreen.storyboard in Resources */,
+				33CE120723FAD6B60043EE12 /* TestPlan.xctestplan in Resources */,
 				33F0F66023F4082000899BD8 /* KanjiDetailViewController.xib in Resources */,
 				4323D3E11FAD0CF600F0FB1E /* WordExampleTableViewCell.xib in Resources */,
 				C1345B051F9E08BA00612B82 /* Assets.xcassets in Resources */,

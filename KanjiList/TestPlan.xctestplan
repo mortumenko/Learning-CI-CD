@@ -1,0 +1,27 @@
+{
+  "configurations" : [
+    {
+      "id" : "27A310A7-D29B-4AB7-ACB8-BF8246876BBD",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "skippedTests" : [
+        "KanjiListTests\/testPassed()"
+      ],
+      "target" : {
+        "containerPath" : "container:KanjiList.xcodeproj",
+        "identifier" : "3394855323F6D08D00FCCAB8",
+        "name" : "KanjiListTests"
+      }
+    }
+  ],
+  "version" : 1
+}

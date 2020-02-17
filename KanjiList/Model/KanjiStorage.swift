@@ -57,7 +57,6 @@ class KanjiStorage {
   }
   
   func allKanji() -> [Kanji] {
-    
     return allKanjiFromJSON.kanjiArray
   }
   
