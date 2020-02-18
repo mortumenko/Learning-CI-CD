@@ -21,6 +21,7 @@ platform :ios do
     increment_build_number
   end
 
+# ⚠️ Be aware: in lane any action (like slack) will be called, only if previouse action was successful
 
 # CLEAN
   desc "Cleans the project"
@@ -31,11 +32,17 @@ platform :ios do
 # BUILD
   desc "Builds the project"
   lane :osbuild do
+      slack(
+          message: "App is going to build target",
+          channel: "#test_fastlane"
+      )
       xcbuild
       slack(
-          message: "App successfully built",
-          channel: "#test_fastlane",
-          success: true # result will be formated and considered as Successful / Failured
+        message: "App successfully built",
+        payload: {
+              "Build Date" => Time.new.to_s,
+              "Built by" => "mannualy via Fastlane"
+        }
       )
   end
 
@@ -43,31 +50,33 @@ platform :ios do
   desc "Runs all the tests"
   lane :test do
     scan(device: "iPhone 11")
-	#slack(
-  	#	message: "App successfully runned tests",
-  	#	channel: "#test_fastlane",
-  	#	success: true
-	#)
-    #slack(
-    #      message: "App couldn't run tests",
-     #     channel: "#test_fastlane",
-      #    success: false
-    #)
+	slack(
+  		message: "App successfully runned tests"
+	)
   end
 
 # CUSTOMIZED TESTS 
 	desc "Runs the tests with custom settings"
 
 	lane :ostest do
-# run_tests # ⚠️ [15:49:35]: Could not find action, lane or variable 'run_tests'. 
+# run_tests # ⚠️ [15:49:35]: Could not find action, lane or variable 'run_tests'.
+        slack(
+            message: "App is going to runn 'scan' action",
+        )
+        
         scan(project: "KanjiList.xcodeproj",
              code_coverage: true,
              device: "iPhone 11"
+             #workspace: "Example.xcworkspace"
+             #xctestrun:"KanjiList/TestPlan.xctestrun",
+             #devices: ["iPhone 11", "iPad Pro"])
         )
-        #workspace: "Example.xcworkspace"
-        #xctestrun:"KanjiList/TestPlan.xctestrun",
-        #devices: ["iPhone 11", "iPad Pro"])
-end
+        
+        slack(
+            message: "App successfully runned tests",
+        )
+
+    end
 
 
 # SUBMIT BETA
@@ -124,3 +133,13 @@ end
 
 # fastlane reports which actions are used
 # No personal data is recorded. Learn more at https://github.com/fastlane/enhancer
+
+
+
+# ✅ optional parameters with default values for slack action:
+#slack(
+  #message: exception.message,
+  #channel: "#test_fastlane", # Optional, by default will post to the default channel configured for the POST URL.
+  #payload: { }, # Optional, lets you specify any number of your own Slack attachments.
+  #success: false # result will be formated and considered as Successful / Failured. Optional, defaults to true.
+#)
