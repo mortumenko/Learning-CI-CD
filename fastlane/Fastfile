@@ -18,6 +18,7 @@ default_platform :ios
 platform :ios do
   before_all do
     ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
+    increment_build_number
   end
 
 
@@ -31,17 +32,27 @@ platform :ios do
   desc "Builds the project"
   lane :osbuild do
       xcbuild
+      slack(
+          message: "App successfully built",
+          channel: "#test_fastlane",
+          success: true # result will be formated and considered as Successful / Failured
+      )
   end
 
 # TESTS
   desc "Runs all the tests"
   lane :test do
     scan(device: "iPhone 11")
-	slack(
-  		message: "App successfully runned tests",
-  		channel: "#test_fastlane", 
-  		success: true
-	)
+	#slack(
+  	#	message: "App successfully runned tests",
+  	#	channel: "#test_fastlane",
+  	#	success: true
+	#)
+    #slack(
+    #      message: "App couldn't run tests",
+     #     channel: "#test_fastlane",
+      #    success: false
+    #)
   end
 
 # CUSTOMIZED TESTS 
@@ -67,7 +78,6 @@ end
     # match(type: "appstore") # more information: https://codesigning.guide
     gym # Build your app - more options available
     pilot
-
     # sh "your_script.sh"
     # You can also use other beta testing services here (run `fastlane actions`)
   end
@@ -82,21 +92,27 @@ end
     # frameit
   end
 
-  # You can define as many lanes as you want
+  
+  
+  ############################# POST ##############################
 
+  # This lane is called, only if the executed lane was successful
   after_all do |lane|
+      build = Actions.lane_context[Actions::SharedValues::BUILD_NUMBER]
+      commit_version_bump(
+        message: "Build #{build}"
+      )
     # This block is called, only if the executed lane was successful
-
-    # slack(
-    #   message: "Successfully deployed new App Update."
-    # )
+     slack(
+       message: "Successfully executed lane."
+     )
   end
 
   error do |lane, exception|
-    # slack(
-    #   message: exception.message,
-    #   success: false
-    # )
+     slack(
+       message: exception.message,
+       success: false
+     )
   end
 end
 
