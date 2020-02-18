@@ -96,18 +96,20 @@ end
   
   ############################# POST ##############################
 
-  # This lane is called, only if the executed lane was successful
+  # ✅ This lane is called, only if the executed lane was successful
   after_all do |lane|
-      build = Actions.lane_context[Actions::SharedValues::BUILD_NUMBER]
-      commit_version_bump(
-        message: "Build #{build}"
-      )
+      # muted because unexpectedly script increaments build number of test target instead of main target
+      #build = Actions.lane_context[Actions::SharedValues::BUILD_NUMBER]
+      #commit_version_bump(
+      #  message: "Build #{build}"
+      #)
     # This block is called, only if the executed lane was successful
      slack(
        message: "Successfully executed lane."
      )
   end
 
+  # ❌ This lane is called, only if the executed lane was failed
   error do |lane, exception|
      slack(
        message: exception.message,
