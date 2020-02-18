@@ -44,11 +44,12 @@
 
 /* Begin PBXFileReference section */
 		18BA64D820377D0300593D25 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3336505023FBECC300CB95CE /* Fastfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; name = Fastfile; path = fastlane/Fastfile; sourceTree = SOURCE_ROOT; };
 		3394855423F6D08D00FCCAB8 /* KanjiListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KanjiListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3394855623F6D08D00FCCAB8 /* KanjiListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiListTests.swift; sourceTree = "<group>"; };
 		3394855823F6D08D00FCCAB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33AAD5B123F4451C002DBC5F /* WordBasedKanjiListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordBasedKanjiListCoordinator.swift; sourceTree = "<group>"; };
-		33CE120623FAD6B50043EE12 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = file; name = TestPlan.xctestplan; path = KanjiList/TestPlan.xctestplan; sourceTree = SOURCE_ROOT; };
+		33CE120623FAD6B50043EE12 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = TestPlan.xctestplan; path = KanjiList/TestPlan.xctestplan; sourceTree = SOURCE_ROOT; };
 		33F0F65B23F4077900899BD8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		33F0F65D23F4082000899BD8 /* KanjiListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KanjiListViewController.xib; sourceTree = "<group>"; };
 		33F0F65E23F4082000899BD8 /* KanjiDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KanjiDetailViewController.xib; sourceTree = "<group>"; };
@@ -126,6 +127,7 @@
 				33CE120623FAD6B50043EE12 /* TestPlan.xctestplan */,
 				437264321FAD04F400A22393 /* AppDelegate.swift */,
 				33F0F66923F43D6800899BD8 /* OS_README.md */,
+				3336505023FBECC300CB95CE /* Fastfile */,
 				437264331FAD04F400A22393 /* Info.plist */,
 			);
 			path = Application;

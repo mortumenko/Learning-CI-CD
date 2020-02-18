@@ -24,21 +24,21 @@ platform :ios do
 # CLEAN
   desc "Cleans the project"
   lane :osclean do
-   xcclean
+      xcclean
   end
 
 # BUILD
   desc "Builds the project"
   lane :osbuild do
-   xcbuild
+      xcbuild
   end
 
 # TESTS
   desc "Runs all the tests"
   lane :test do
-    	scan
+    scan(device: "iPhone 11")
 	slack(
-  		message: "App successfully ruined tests",
+  		message: "App successfully runned tests",
   		channel: "#test_fastlane", 
   		success: true
 	)
@@ -49,10 +49,13 @@ platform :ios do
 
 	lane :ostest do
 # run_tests # ⚠️ [15:49:35]: Could not find action, lane or variable 'run_tests'. 
-	scan(project: "KanjiList.xcodeproj", #workspace: "Example.xcworkspace"
-	code_coverage: true,
-	#xctestrun:"KanjiList/TestPlan.xctestrun",
-        device: "iPhone 11") #devices: ["iPhone 11", "iPad Pro"])
+        scan(project: "KanjiList.xcodeproj",
+             code_coverage: true,
+             device: "iPhone 11"
+        )
+        #workspace: "Example.xcworkspace"
+        #xctestrun:"KanjiList/TestPlan.xctestrun",
+        #devices: ["iPhone 11", "iPad Pro"])
 end
 
 
