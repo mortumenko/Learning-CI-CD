@@ -31,18 +31,17 @@ platform :ios do
 # BUILD
   desc "Builds the project"
   lane :osbuild do
-      
+
       identifier = CredentialsManager::AppfileConfig.try_fetch_value(:APP_NAME)
-      theName = ENV["APP_NAME"]
       version   = get_version_number(xcodeproj: "KanjiList.xcodeproj")
       build     = get_build_number(xcodeproj: "KanjiList.xcodeproj")
-      projectName = get_info_plist_value(path: "KanjiList/Sources/Info.plist", key: "CFBundleName")
+      projectName = get_info_plist_value(path: "KanjiList/Application/Info.plist", key: "CFBundleName")
       slack(
           message: "App is going to build target",
             payload: {
                   "Version:" => version,
                   "Build:" => build,
-                  "Target name: " => theName,
+                  "Target name: " => "KanjiList",
                   "Branch name:" =>  git_branch
             },
           channel: "#test_fastlane"
@@ -68,14 +67,14 @@ platform :ios do
         )
     end
 
-# CUSTOMIZED TESTS 
+# CUSTOMIZED TESTS
     desc "Runs the tests with custom settings"
 	lane :ostest do
 # run_tests # ⚠️ [15:49:35]: Could not find action, lane or variable 'run_tests'.
         slack(
             message: "App is going to run 'scan' action",
         )
-        
+
         scan(project: "KanjiList.xcodeproj",
              code_coverage: true,
              device: "iPhone 11"
@@ -83,7 +82,7 @@ platform :ios do
              #xctestrun:"KanjiList/TestPlan.xctestrun",
              #devices: ["iPhone 11", "iPad Pro"])
         )
-        
+
         slack(
             message: "App successfully runned tests"
         )
@@ -116,8 +115,8 @@ platform :ios do
     # frameit
   end
 
-  
-  
+
+
   ############################# POST ##############################
 
   # ✅ This lane is called, only if the executed lane was successful

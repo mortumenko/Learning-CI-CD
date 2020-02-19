@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		18BA64D920377D0300593D25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BA64D820377D0300593D25 /* LaunchScreen.storyboard */; };
 		338F31E223FD83E80052D66F /* KanjiListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F31E123FD83E80052D66F /* KanjiListUITests.swift */; };
-		338F31ED23FD88430052D66F /* Fastfile in Resources */ = {isa = PBXBuildFile; fileRef = 3336505023FBECC300CB95CE /* Fastfile */; };
 		338F31F123FD88D10052D66F /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F31EF23FD88B60052D66F /* SnapshotHelper.swift */; };
 		3394855723F6D08D00FCCAB8 /* KanjiListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3394855623F6D08D00FCCAB8 /* KanjiListTests.swift */; };
 		33AAD5B223F4451C002DBC5F /* WordBasedKanjiListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD5B123F4451C002DBC5F /* WordBasedKanjiListCoordinator.swift */; };
@@ -54,7 +53,6 @@
 
 /* Begin PBXFileReference section */
 		18BA64D820377D0300593D25 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		3336505023FBECC300CB95CE /* Fastfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; fileEncoding = 4; name = Fastfile; path = KanjiList/Sources/Fastfile; sourceTree = SOURCE_ROOT; };
 		338F31DF23FD83E80052D66F /* KanjiListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KanjiListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		338F31E123FD83E80052D66F /* KanjiListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiListUITests.swift; sourceTree = "<group>"; };
 		338F31E323FD83E80052D66F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -128,7 +126,6 @@
 				33CE120623FAD6B50043EE12 /* TestPlan.xctestplan */,
 				33F0F66923F43D6800899BD8 /* OS_README.md */,
 				338F31EF23FD88B60052D66F /* SnapshotHelper.swift */,
-				3336505023FBECC300CB95CE /* Fastfile */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -369,7 +366,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				338F31ED23FD88430052D66F /* Fastfile in Resources */,
 				4323D3DB1FAD05CD00F0FB1E /* Main.storyboard in Resources */,
 				437264401FAD04F400A22393 /* knji.json in Resources */,
 				4323D3E51FAD110200F0FB1E /* KanjiDataTableViewCell.xib in Resources */,
