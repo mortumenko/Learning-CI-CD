@@ -36,7 +36,7 @@ platform :ios do
       theName = ENV["APP_NAME"]
       version   = get_version_number(xcodeproj: "KanjiList.xcodeproj")
       build     = get_build_number(xcodeproj: "KanjiList.xcodeproj")
-      projectName = get_info_plist_value(path: "KanjiList/Application/Info.plist", key: "CFBundleName")
+      projectName = get_info_plist_value(path: "KanjiList/Sources/Info.plist", key: "CFBundleName")
       slack(
           message: "App is going to build target",
             payload: {
