@@ -18,7 +18,6 @@ default_platform :ios
 platform :ios do
   before_all do
     ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
-    increment_build_number
   end
 
 # ⚠️ Be aware: in lane any action (like slack) will be called, only if previouse action was successful
@@ -32,8 +31,20 @@ platform :ios do
 # BUILD
   desc "Builds the project"
   lane :osbuild do
+      
+      identifier = CredentialsManager::AppfileConfig.try_fetch_value(:APP_NAME)
+      theName = ENV["APP_NAME"]
+      version   = get_version_number(xcodeproj: "KanjiList.xcodeproj")
+      build     = get_build_number(xcodeproj: "KanjiList.xcodeproj")
+      projectName = get_info_plist_value(path: "KanjiList/Application/Info.plist", key: "CFBundleName")
       slack(
           message: "App is going to build target",
+            payload: {
+                  "Version:" => version,
+                  "Build:" => build,
+                  "Target name: " => theName,
+                  "Branch name:" =>  git_branch
+            },
           channel: "#test_fastlane"
       )
       xcbuild
@@ -47,21 +58,22 @@ platform :ios do
   end
 
 # TESTS
-  desc "Runs all the tests"
-  lane :test do
-    scan(device: "iPhone 11")
-	slack(
-  		message: "App successfully runned tests"
-	)
-  end
+    desc "Runs all the tests"
+    lane :test do
+        ensure_git_status_clean
+        scan(device: "iPhone 11")
+        slack(
+              message: "App successfully runned tests",
+              clean: true
+        )
+    end
 
 # CUSTOMIZED TESTS 
-	desc "Runs the tests with custom settings"
-
+    desc "Runs the tests with custom settings"
 	lane :ostest do
 # run_tests # ⚠️ [15:49:35]: Could not find action, lane or variable 'run_tests'.
         slack(
-            message: "App is going to runn 'scan' action",
+            message: "App is going to run 'scan' action",
         )
         
         scan(project: "KanjiList.xcodeproj",
@@ -73,7 +85,7 @@ platform :ios do
         )
         
         slack(
-            message: "App successfully runned tests",
+            message: "App successfully runned tests"
         )
 
     end
@@ -84,6 +96,7 @@ platform :ios do
   desc "This will also make sure the profile is up to date"
   lane :beta do
     xcclean
+    increment_build_number
     # match(type: "appstore") # more information: https://codesigning.guide
     gym # Build your app - more options available
     pilot
@@ -96,6 +109,8 @@ platform :ios do
   lane :release do
     # match(type: "appstore")
     # snapshot
+    ensure_git_status_clean
+    ensure_git_branch(branch: "master")
     gym # Build your app - more options available
     deliver(force: true)
     # frameit
