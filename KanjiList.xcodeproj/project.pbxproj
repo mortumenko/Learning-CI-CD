@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18BA64D920377D0300593D25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BA64D820377D0300593D25 /* LaunchScreen.storyboard */; };
+		338F321923FD99610052D66F /* KanjiListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F321823FD99610052D66F /* KanjiListUITests.swift */; };
 		3394855723F6D08D00FCCAB8 /* KanjiListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3394855623F6D08D00FCCAB8 /* KanjiListTests.swift */; };
 		33AAD5B223F4451C002DBC5F /* WordBasedKanjiListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD5B123F4451C002DBC5F /* WordBasedKanjiListCoordinator.swift */; };
 		33CE120723FAD6B60043EE12 /* TestPlan.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 33CE120623FAD6B50043EE12 /* TestPlan.xctestplan */; };
@@ -33,6 +34,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		338F321B23FD99610052D66F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1345AF21F9E08B900612B82 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C1345AF91F9E08BA00612B82;
+			remoteInfo = KanjiList;
+		};
 		3394855923F6D08D00FCCAB8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C1345AF21F9E08B900612B82 /* Project object */;
@@ -45,6 +53,9 @@
 /* Begin PBXFileReference section */
 		18BA64D820377D0300593D25 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		338F31EF23FD88B60052D66F /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = KanjiList/Sources/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		338F321623FD99610052D66F /* KanjiListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KanjiListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		338F321823FD99610052D66F /* KanjiListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiListUITests.swift; sourceTree = "<group>"; };
+		338F321A23FD99610052D66F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3394855423F6D08D00FCCAB8 /* KanjiListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KanjiListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3394855623F6D08D00FCCAB8 /* KanjiListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiListTests.swift; sourceTree = "<group>"; };
 		3394855823F6D08D00FCCAB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -75,6 +86,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		338F321323FD99610052D66F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3394855123F6D08D00FCCAB8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -100,6 +118,15 @@
 				338F31EF23FD88B60052D66F /* SnapshotHelper.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		338F321723FD99610052D66F /* KanjiListUITests */ = {
+			isa = PBXGroup;
+			children = (
+				338F321823FD99610052D66F /* KanjiListUITests.swift */,
+				338F321A23FD99610052D66F /* Info.plist */,
+			);
+			path = KanjiListUITests;
 			sourceTree = "<group>";
 		};
 		3394855523F6D08D00FCCAB8 /* KanjiListTests */ = {
@@ -187,6 +214,7 @@
 			children = (
 				C1345AFC1F9E08BA00612B82 /* KanjiList */,
 				3394855523F6D08D00FCCAB8 /* KanjiListTests */,
+				338F321723FD99610052D66F /* KanjiListUITests */,
 				C1345AFB1F9E08BA00612B82 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -196,6 +224,7 @@
 			children = (
 				C1345AFA1F9E08BA00612B82 /* KanjiList.app */,
 				3394855423F6D08D00FCCAB8 /* KanjiListTests.xctest */,
+				338F321623FD99610052D66F /* KanjiListUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -218,6 +247,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		338F321523FD99610052D66F /* KanjiListUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 338F321F23FD99610052D66F /* Build configuration list for PBXNativeTarget "KanjiListUITests" */;
+			buildPhases = (
+				338F321223FD99610052D66F /* Sources */,
+				338F321323FD99610052D66F /* Frameworks */,
+				338F321423FD99610052D66F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				338F321C23FD99610052D66F /* PBXTargetDependency */,
+			);
+			name = KanjiListUITests;
+			productName = KanjiListUITests;
+			productReference = 338F321623FD99610052D66F /* KanjiListUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		3394855323F6D08D00FCCAB8 /* KanjiListTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3394855B23F6D08D00FCCAB8 /* Build configuration list for PBXNativeTarget "KanjiListTests" */;
@@ -263,6 +310,11 @@
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = Kolos;
 				TargetAttributes = {
+					338F321523FD99610052D66F = {
+						CreatedOnToolsVersion = 11.3.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = C1345AF91F9E08BA00612B82;
+					};
 					3394855323F6D08D00FCCAB8 = {
 						CreatedOnToolsVersion = 11.3.1;
 						ProvisioningStyle = Automatic;
@@ -289,11 +341,19 @@
 			targets = (
 				C1345AF91F9E08BA00612B82 /* KanjiList */,
 				3394855323F6D08D00FCCAB8 /* KanjiListTests */,
+				338F321523FD99610052D66F /* KanjiListUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		338F321423FD99610052D66F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3394855223F6D08D00FCCAB8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -320,6 +380,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		338F321223FD99610052D66F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				338F321923FD99610052D66F /* KanjiListUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3394855023F6D08D00FCCAB8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -351,6 +419,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		338F321C23FD99610052D66F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C1345AF91F9E08BA00612B82 /* KanjiList */;
+			targetProxy = 338F321B23FD99610052D66F /* PBXContainerItemProxy */;
+		};
 		3394855A23F6D08D00FCCAB8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C1345AF91F9E08BA00612B82 /* KanjiList */;
@@ -370,6 +443,43 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		338F321D23FD99610052D66F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T4ZZK7HJ6V;
+				INFOPLIST_FILE = KanjiListUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = personal.KanjiListUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KanjiList;
+			};
+			name = Debug;
+		};
+		338F321E23FD99610052D66F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T4ZZK7HJ6V;
+				INFOPLIST_FILE = KanjiListUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = personal.KanjiListUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KanjiList;
+			};
+			name = Release;
+		};
 		3394855C23F6D08D00FCCAB8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -555,6 +665,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		338F321F23FD99610052D66F /* Build configuration list for PBXNativeTarget "KanjiListUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				338F321D23FD99610052D66F /* Debug */,
+				338F321E23FD99610052D66F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3394855B23F6D08D00FCCAB8 /* Build configuration list for PBXNativeTarget "KanjiListTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

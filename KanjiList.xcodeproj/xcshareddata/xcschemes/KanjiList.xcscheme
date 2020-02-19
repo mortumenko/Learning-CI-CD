@@ -42,7 +42,7 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "338F31DE23FD83E80052D66F"
+               BlueprintIdentifier = "338F321523FD99610052D66F"
                BuildableName = "KanjiListUITests.xctest"
                BlueprintName = "KanjiListUITests"
                ReferencedContainer = "container:KanjiList.xcodeproj">
@@ -70,7 +70,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "338F31DE23FD83E80052D66F"
+               BlueprintIdentifier = "338F321523FD99610052D66F"
                BuildableName = "KanjiListUITests.xctest"
                BlueprintName = "KanjiListUITests"
                ReferencedContainer = "container:KanjiList.xcodeproj">
