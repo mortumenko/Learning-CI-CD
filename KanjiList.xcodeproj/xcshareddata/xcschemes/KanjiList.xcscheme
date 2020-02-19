@@ -52,6 +52,16 @@
                ReferencedContainer = "container:KanjiList.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "338F31DE23FD83E80052D66F"
+               BuildableName = "KanjiListUITests.xctest"
+               BlueprintName = "KanjiListUITests"
+               ReferencedContainer = "container:KanjiList.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
