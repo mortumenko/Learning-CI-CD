@@ -32,7 +32,11 @@ class KanjiListUITests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-
+        
+        let app = XCUIApplication()
+        setupSnapshot(app)
+        app.launch()
+        
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
 
@@ -45,11 +49,34 @@ class KanjiListUITests: XCTestCase {
 
     func testExample() {
         // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
                 
+                                
+        //snapshot("TheScreenName")
+        
+//4) Add `snapshot("01LoginScreen")` to wherever you want to create the screenshots
+
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
 }
+
+/*
+ Setting Up snapshot
+  + 1. Create a new UI Test target in your Xcode project (See the top part of this article)
+  + 2. Run fastlane snapshot init in your project folder
+  + 3. Add the ./SnapshotHelper.swift file to your UI Test target (You can move the file anywhere you want)
+  + 4. Add a new Xcode scheme for the newly created UI Test target
+  + 5. Edit the scheme
+  + 6. In the list on the left click "Build", and enable the checkbox under the "Run" column for your target.
+  + 7. Enable the Shared box of the newly created scheme
+8. (Objective C only) Add the bridging header to your test class.
+ #import "MYUITests-Swift.h"
+ The bridging header is named after your test target with -Swift.h appended.
+9. In your UI Test class, click the Record button on the bottom left and record your interaction
+10. To take a screenshot, call the following between interactions
+ Swift: snapshot("01LoginScreen")
+ Objective C: [Snapshot snapshot:@"01LoginScreen" timeWaitingForIdle:10];
+  + 11. Add the following code to your setUp() method:
+  + 12. In the terminal run fastlane snapshot.
+ */
