@@ -29,7 +29,7 @@ platform :ios do
   desc "Cleans the project"
   lane :osclean do
 
-    #if ENV['SCHEME'] != nil # OS: custom key-value pair works !!!
+    #if ENV['SCHEME'] != nil
     if ENV['TARGET_NAME'] != nil # OS: custom key-value pair works !!!
       xcclean
     end
@@ -39,55 +39,56 @@ platform :ios do
   desc "Builds the project"
   lane :osbuild do
 
-      targetName = ENV['TARGET_NAME']
-      version   = get_version_number(xcodeproj: "KanjiList.xcodeproj")
-      build     = get_build_number(xcodeproj: "KanjiList.xcodeproj")
-      unusedProjectName = get_info_plist_value(path: "KanjiList/Application/Info.plist", key: "CFBundleName")
-      unusedIdentifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
-      slack(
-          message: "App is going to build target",
-            payload: {
-                  "Version:" => version,
-                  "Build:" => build,
-                  "Target name: " => targetName,
-                  "Branch name:" =>  git_branch
-            },
-          channel: "#test_fastlane"
-      )
       xcbuild
       slack(
-        message: "App successfully built",
-        payload: {
-              "Build Date" => Time.new.to_s,
-              "Built by" => "mannualy via Fastlane",
-              "Target name: " => targetName,
-              "Branch name:" =>  git_branch
-        }
+        message: "App successfully built"
       )
   end
 
 # TESTS
     desc "Runs all the tests"
     lane :test do
-        ensure_git_status_clean
+
+
+        slack(
+            message: "App is going to run 'scan' action",
+        )
+
         scan(
           project: "KanjiList.xcodeproj",
           scheme: ENV['SCHEME'],
           clean: true,
           device: "iPhone 11"
         )
+
         slack(
-              message: "App successfully runned tests",
-              clean: true
+            message: "App successfully runned tests"
         )
+
     end
 
 # CUSTOMIZED TESTS
     desc "Runs the tests with custom settings"
-	lane :ostest do
+	  lane :ostest do
 # run_tests # ⚠️ [15:49:35]: Could not find action, lane or variable 'run_tests'.
+
+          ensure_git_status_clean
+
+          targetName = ENV['TARGET_NAME']
+          version   = get_version_number(xcodeproj: "KanjiList.xcodeproj")
+          build     = get_build_number(xcodeproj: "KanjiList.xcodeproj")
+          unusedProjectName = get_info_plist_value(path: "KanjiList/Application/Info.plist", key: "CFBundleName")
+          unusedIdentifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
+
         slack(
-            message: "App is going to run 'scan' action",
+            message: "App is going to build target",
+            payload: {
+                "Version:" => version,
+                "Build:" => build,
+                "Target name: " => targetName,
+                "Branch name:" =>  git_branch
+            },
+            channel: "#test_fastlane"
         )
 
         scan(project: "KanjiList.xcodeproj",
@@ -101,7 +102,14 @@ platform :ios do
         )
 
         slack(
-            message: "App successfully runned tests"
+              message: "App successfully was built and ran tests",
+              clean: true,
+              payload: {
+                    "Build Date" => Time.new.to_s,
+                    "Built by" => "mannualy via Fastlane",
+                    "Target name: " => targetName,
+                    "Branch name:" =>  git_branch
+              }
         )
 
     end
