@@ -49,7 +49,6 @@ platform :ios do
     desc "Runs all the tests"
     lane :test do
 
-
         slack(
             message: "App is going to run 'scan' action",
         )
@@ -103,7 +102,6 @@ platform :ios do
 
         slack(
               message: "App successfully was built and ran tests",
-              clean: true,
               payload: {
                     "Build Date" => Time.new.to_s,
                     "Built by" => "mannualy via Fastlane",
