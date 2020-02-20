@@ -71,7 +71,7 @@ platform :ios do
 	  lane :ostest do
 # run_tests # ⚠️ [15:49:35]: Could not find action, lane or variable 'run_tests'.
 
-          ensure_git_status_clean
+          #ensure_git_status_clean
 
           targetName = ENV['TARGET_NAME']
           version   = get_version_number(xcodeproj: "KanjiList.xcodeproj")
@@ -80,7 +80,7 @@ platform :ios do
           unusedIdentifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
 
         slack(
-            message: "App is going to build target",
+            message: "App is going to build target: #{ENV['TARGET_NAME']}",
             payload: {
                 "Version:" => version,
                 "Build:" => build,
@@ -101,7 +101,7 @@ platform :ios do
         )
 
         slack(
-              message: "App successfully was built and ran tests",
+              message: "App successfully was built target : #{ENV['TARGET_NAME']} and ran tests",
               payload: {
                     "Build Date" => Time.new.to_s,
                     "Built by" => "mannualy via Fastlane",
