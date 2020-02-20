@@ -83,7 +83,7 @@
 		3394855823F6D08D00FCCAB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33AAD5B123F4451C002DBC5F /* WordBasedKanjiListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordBasedKanjiListCoordinator.swift; sourceTree = "<group>"; };
 		33CE120623FAD6B50043EE12 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = TestPlan.xctestplan; path = KanjiList/Sources/TestPlan.xctestplan; sourceTree = SOURCE_ROOT; };
-		33EDAA1D23FEC9410073A720 /* BadTarget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BadTarget.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		33EDAA1D23FEC9410073A720 /* The BadTarget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The BadTarget.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33EDAA1E23FEC9420073A720 /* KanjiList copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "KanjiList copy-Info.plist"; path = "/Users/oleksandr_sulyma/Documents/Projects/my iOS Playground/not my example projects/Coordinator Tutorial for iOS/KanjiList-Materials/KanjiList-Starter/KanjiList copy-Info.plist"; sourceTree = "<absolute>"; };
 		33F0F65B23F4077900899BD8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		33F0F65D23F4082000899BD8 /* KanjiListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KanjiListViewController.xib; sourceTree = "<group>"; };
@@ -257,7 +257,7 @@
 				C1345AFA1F9E08BA00612B82 /* KanjiList.app */,
 				3394855423F6D08D00FCCAB8 /* KanjiListTests.xctest */,
 				338F321623FD99610052D66F /* KanjiListUITests.xctest */,
-				33EDAA1D23FEC9410073A720 /* BadTarget.app */,
+				33EDAA1D23FEC9410073A720 /* The BadTarget.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -330,7 +330,7 @@
 			);
 			name = BadTarget;
 			productName = KanjiList;
-			productReference = 33EDAA1D23FEC9410073A720 /* BadTarget.app */;
+			productReference = 33EDAA1D23FEC9410073A720 /* The BadTarget.app */;
 			productType = "com.apple.product-type.application";
 		};
 		C1345AF91F9E08BA00612B82 /* KanjiList */ = {
@@ -393,9 +393,9 @@
 			projectRoot = "";
 			targets = (
 				C1345AF91F9E08BA00612B82 /* KanjiList */,
+				33EDAA0023FEC9410073A720 /* BadTarget */,
 				3394855323F6D08D00FCCAB8 /* KanjiListTests */,
 				338F321523FD99610052D66F /* KanjiListUITests */,
-				33EDAA0023FEC9410073A720 /* BadTarget */,
 			);
 		};
 /* End PBXProject section */
@@ -618,8 +618,8 @@
 				DEVELOPMENT_TEAM = T4ZZK7HJ6V;
 				INFOPLIST_FILE = "KanjiList copy-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.mortum;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.mortum.BadTarget;
+				PRODUCT_NAME = "The BadTarget";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -634,8 +634,8 @@
 				DEVELOPMENT_TEAM = T4ZZK7HJ6V;
 				INFOPLIST_FILE = "KanjiList copy-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.mortum;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.mortum.BadTarget;
+				PRODUCT_NAME = "The BadTarget";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

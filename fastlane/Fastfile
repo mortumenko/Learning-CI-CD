@@ -28,23 +28,28 @@ platform :ios do
 # CLEAN
   desc "Cleans the project"
   lane :osclean do
+
+    #if ENV['SCHEME'] != nil # OS: custom key-value pair works !!!
+    if ENV['TARGET_NAME'] != nil # OS: custom key-value pair works !!!
       xcclean
+    end
   end
 
 # BUILD
   desc "Builds the project"
   lane :osbuild do
 
-      identifier = CredentialsManager::AppfileConfig.try_fetch_value(:APP_NAME)
+      targetName = ENV['TARGET_NAME']
       version   = get_version_number(xcodeproj: "KanjiList.xcodeproj")
       build     = get_build_number(xcodeproj: "KanjiList.xcodeproj")
-      projectName = get_info_plist_value(path: "KanjiList/Application/Info.plist", key: "CFBundleName")
+      unusedProjectName = get_info_plist_value(path: "KanjiList/Application/Info.plist", key: "CFBundleName")
+      unusedIdentifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
       slack(
           message: "App is going to build target",
             payload: {
                   "Version:" => version,
                   "Build:" => build,
-                  "Target name: " => "KanjiList",
+                  "Target name: " => targetName,
                   "Branch name:" =>  git_branch
             },
           channel: "#test_fastlane"
@@ -54,7 +59,9 @@ platform :ios do
         message: "App successfully built",
         payload: {
               "Build Date" => Time.new.to_s,
-              "Built by" => "mannualy via Fastlane"
+              "Built by" => "mannualy via Fastlane",
+              "Target name: " => targetName,
+              "Branch name:" =>  git_branch
         }
       )
   end
@@ -63,7 +70,12 @@ platform :ios do
     desc "Runs all the tests"
     lane :test do
         ensure_git_status_clean
-        scan(device: "iPhone 11")
+        scan(
+          project: "KanjiList.xcodeproj",
+          scheme: ENV['SCHEME'],
+          clean: true,
+          device: "iPhone 11"
+        )
         slack(
               message: "App successfully runned tests",
               clean: true
@@ -80,6 +92,8 @@ platform :ios do
 
         scan(project: "KanjiList.xcodeproj",
              code_coverage: true,
+             clean: true,
+             scheme: ENV['SCHEME'],
              device: "iPhone 11"
              #workspace: "Example.xcworkspace"
              #xctestrun:"KanjiList/TestPlan.xctestrun",
