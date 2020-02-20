@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "33EDAA0023FEC9410073A720"
-               BuildableName = "BadTarget.app"
+               BuildableName = "The BadTarget.app"
                BlueprintName = "BadTarget"
                ReferencedContainer = "container:KanjiList.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "33EDAA0023FEC9410073A720"
-            BuildableName = "BadTarget.app"
+            BuildableName = "The BadTarget.app"
             BlueprintName = "BadTarget"
             ReferencedContainer = "container:KanjiList.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "33EDAA0023FEC9410073A720"
-            BuildableName = "BadTarget.app"
+            BuildableName = "The BadTarget.app"
             BlueprintName = "BadTarget"
             ReferencedContainer = "container:KanjiList.xcodeproj">
          </BuildableReference>
