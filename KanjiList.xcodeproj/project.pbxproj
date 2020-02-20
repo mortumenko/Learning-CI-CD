@@ -12,6 +12,28 @@
 		3394855723F6D08D00FCCAB8 /* KanjiListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3394855623F6D08D00FCCAB8 /* KanjiListTests.swift */; };
 		33AAD5B223F4451C002DBC5F /* WordBasedKanjiListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD5B123F4451C002DBC5F /* WordBasedKanjiListCoordinator.swift */; };
 		33CE120723FAD6B60043EE12 /* TestPlan.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 33CE120623FAD6B50043EE12 /* TestPlan.xctestplan */; };
+		33EDAA0223FEC9410073A720 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F0F65B23F4077900899BD8 /* Coordinator.swift */; };
+		33EDAA0323FEC9410073A720 /* KanjiDetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F0F66523F41CEE00899BD8 /* KanjiDetailCoordinator.swift */; };
+		33EDAA0423FEC9410073A720 /* WordExampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4323D3DE1FAD0CF600F0FB1E /* WordExampleTableViewCell.swift */; };
+		33EDAA0523FEC9410073A720 /* KanjiDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4323D3E21FAD110200F0FB1E /* KanjiDataTableViewCell.swift */; };
+		33EDAA0623FEC9410073A720 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437264321FAD04F400A22393 /* AppDelegate.swift */; };
+		33EDAA0723FEC9410073A720 /* KanjiStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1B73EE1FC47B0600327A3F /* KanjiStorage.swift */; };
+		33EDAA0823FEC9410073A720 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F0F66123F40C9400899BD8 /* ApplicationCoordinator.swift */; };
+		33EDAA0923FEC9410073A720 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F0F66723F4269300899BD8 /* Extensions.swift */; };
+		33EDAA0A23FEC9410073A720 /* AllKanjiListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F0F66323F410A600899BD8 /* AllKanjiListCoordinator.swift */; };
+		33EDAA0B23FEC9410073A720 /* KanjiDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437264391FAD04F400A22393 /* KanjiDetailViewController.swift */; };
+		33EDAA0C23FEC9410073A720 /* KanjiListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4372643B1FAD04F400A22393 /* KanjiListViewController.swift */; };
+		33EDAA0D23FEC9410073A720 /* WordBasedKanjiListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD5B123F4451C002DBC5F /* WordBasedKanjiListCoordinator.swift */; };
+		33EDAA0E23FEC9410073A720 /* Kanji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4372642F1FAD04F400A22393 /* Kanji.swift */; };
+		33EDAA1123FEC9410073A720 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1345B011F9E08BA00612B82 /* Main.storyboard */; };
+		33EDAA1223FEC9410073A720 /* knji.json in Resources */ = {isa = PBXBuildFile; fileRef = 437264351FAD04F400A22393 /* knji.json */; };
+		33EDAA1323FEC9410073A720 /* KanjiDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4323D3E31FAD110200F0FB1E /* KanjiDataTableViewCell.xib */; };
+		33EDAA1423FEC9410073A720 /* KanjiListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F0F65D23F4082000899BD8 /* KanjiListViewController.xib */; };
+		33EDAA1523FEC9410073A720 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BA64D820377D0300593D25 /* LaunchScreen.storyboard */; };
+		33EDAA1623FEC9410073A720 /* TestPlan.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 33CE120623FAD6B50043EE12 /* TestPlan.xctestplan */; };
+		33EDAA1723FEC9410073A720 /* KanjiDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F0F65E23F4082000899BD8 /* KanjiDetailViewController.xib */; };
+		33EDAA1823FEC9410073A720 /* WordExampleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4323D3DF1FAD0CF600F0FB1E /* WordExampleTableViewCell.xib */; };
+		33EDAA1923FEC9410073A720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1345B041F9E08BA00612B82 /* Assets.xcassets */; };
 		33F0F65C23F4077900899BD8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F0F65B23F4077900899BD8 /* Coordinator.swift */; };
 		33F0F65F23F4082000899BD8 /* KanjiListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F0F65D23F4082000899BD8 /* KanjiListViewController.xib */; };
 		33F0F66023F4082000899BD8 /* KanjiDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F0F65E23F4082000899BD8 /* KanjiDetailViewController.xib */; };
@@ -61,6 +83,8 @@
 		3394855823F6D08D00FCCAB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33AAD5B123F4451C002DBC5F /* WordBasedKanjiListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordBasedKanjiListCoordinator.swift; sourceTree = "<group>"; };
 		33CE120623FAD6B50043EE12 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = TestPlan.xctestplan; path = KanjiList/Sources/TestPlan.xctestplan; sourceTree = SOURCE_ROOT; };
+		33EDAA1D23FEC9410073A720 /* BadTarget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BadTarget.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		33EDAA1E23FEC9420073A720 /* KanjiList copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "KanjiList copy-Info.plist"; path = "/Users/oleksandr_sulyma/Documents/Projects/my iOS Playground/not my example projects/Coordinator Tutorial for iOS/KanjiList-Materials/KanjiList-Starter/KanjiList copy-Info.plist"; sourceTree = "<absolute>"; };
 		33F0F65B23F4077900899BD8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		33F0F65D23F4082000899BD8 /* KanjiListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KanjiListViewController.xib; sourceTree = "<group>"; };
 		33F0F65E23F4082000899BD8 /* KanjiDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KanjiDetailViewController.xib; sourceTree = "<group>"; };
@@ -94,6 +118,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3394855123F6D08D00FCCAB8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33EDAA0F23FEC9410073A720 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -216,6 +247,7 @@
 				3394855523F6D08D00FCCAB8 /* KanjiListTests */,
 				338F321723FD99610052D66F /* KanjiListUITests */,
 				C1345AFB1F9E08BA00612B82 /* Products */,
+				33EDAA1E23FEC9420073A720 /* KanjiList copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -225,6 +257,7 @@
 				C1345AFA1F9E08BA00612B82 /* KanjiList.app */,
 				3394855423F6D08D00FCCAB8 /* KanjiListTests.xctest */,
 				338F321623FD99610052D66F /* KanjiListUITests.xctest */,
+				33EDAA1D23FEC9410073A720 /* BadTarget.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -283,6 +316,23 @@
 			productReference = 3394855423F6D08D00FCCAB8 /* KanjiListTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		33EDAA0023FEC9410073A720 /* BadTarget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33EDAA1A23FEC9410073A720 /* Build configuration list for PBXNativeTarget "BadTarget" */;
+			buildPhases = (
+				33EDAA0123FEC9410073A720 /* Sources */,
+				33EDAA0F23FEC9410073A720 /* Frameworks */,
+				33EDAA1023FEC9410073A720 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BadTarget;
+			productName = KanjiList;
+			productReference = 33EDAA1D23FEC9410073A720 /* BadTarget.app */;
+			productType = "com.apple.product-type.application";
+		};
 		C1345AF91F9E08BA00612B82 /* KanjiList */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1345B0C1F9E08BA00612B82 /* Build configuration list for PBXNativeTarget "KanjiList" */;
@@ -320,6 +370,9 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = C1345AF91F9E08BA00612B82;
 					};
+					33EDAA0023FEC9410073A720 = {
+						ProvisioningStyle = Automatic;
+					};
 					C1345AF91F9E08BA00612B82 = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
@@ -342,6 +395,7 @@
 				C1345AF91F9E08BA00612B82 /* KanjiList */,
 				3394855323F6D08D00FCCAB8 /* KanjiListTests */,
 				338F321523FD99610052D66F /* KanjiListUITests */,
+				33EDAA0023FEC9410073A720 /* BadTarget */,
 			);
 		};
 /* End PBXProject section */
@@ -358,6 +412,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33EDAA1023FEC9410073A720 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33EDAA1123FEC9410073A720 /* Main.storyboard in Resources */,
+				33EDAA1223FEC9410073A720 /* knji.json in Resources */,
+				33EDAA1323FEC9410073A720 /* KanjiDataTableViewCell.xib in Resources */,
+				33EDAA1423FEC9410073A720 /* KanjiListViewController.xib in Resources */,
+				33EDAA1523FEC9410073A720 /* LaunchScreen.storyboard in Resources */,
+				33EDAA1623FEC9410073A720 /* TestPlan.xctestplan in Resources */,
+				33EDAA1723FEC9410073A720 /* KanjiDetailViewController.xib in Resources */,
+				33EDAA1823FEC9410073A720 /* WordExampleTableViewCell.xib in Resources */,
+				33EDAA1923FEC9410073A720 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +463,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				3394855723F6D08D00FCCAB8 /* KanjiListTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		33EDAA0123FEC9410073A720 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				33EDAA0223FEC9410073A720 /* Coordinator.swift in Sources */,
+				33EDAA0323FEC9410073A720 /* KanjiDetailCoordinator.swift in Sources */,
+				33EDAA0423FEC9410073A720 /* WordExampleTableViewCell.swift in Sources */,
+				33EDAA0523FEC9410073A720 /* KanjiDataTableViewCell.swift in Sources */,
+				33EDAA0623FEC9410073A720 /* AppDelegate.swift in Sources */,
+				33EDAA0723FEC9410073A720 /* KanjiStorage.swift in Sources */,
+				33EDAA0823FEC9410073A720 /* ApplicationCoordinator.swift in Sources */,
+				33EDAA0923FEC9410073A720 /* Extensions.swift in Sources */,
+				33EDAA0A23FEC9410073A720 /* AllKanjiListCoordinator.swift in Sources */,
+				33EDAA0B23FEC9410073A720 /* KanjiDetailViewController.swift in Sources */,
+				33EDAA0C23FEC9410073A720 /* KanjiListViewController.swift in Sources */,
+				33EDAA0D23FEC9410073A720 /* WordBasedKanjiListCoordinator.swift in Sources */,
+				33EDAA0E23FEC9410073A720 /* Kanji.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +606,38 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KanjiList.app/KanjiList";
+			};
+			name = Release;
+		};
+		33EDAA1B23FEC9410073A720 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 42;
+				DEVELOPMENT_TEAM = T4ZZK7HJ6V;
+				INFOPLIST_FILE = "KanjiList copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.mortum;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		33EDAA1C23FEC9410073A720 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 42;
+				DEVELOPMENT_TEAM = T4ZZK7HJ6V;
+				INFOPLIST_FILE = "KanjiList copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.mortum;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -679,6 +801,15 @@
 			buildConfigurations = (
 				3394855C23F6D08D00FCCAB8 /* Debug */,
 				3394855D23F6D08D00FCCAB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		33EDAA1A23FEC9410073A720 /* Build configuration list for PBXNativeTarget "BadTarget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33EDAA1B23FEC9410073A720 /* Debug */,
+				33EDAA1C23FEC9410073A720 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
