@@ -32,6 +32,8 @@ platform :ios do
     #if ENV['SCHEME'] != nil
     if ENV['TARGET_NAME'] != nil # OS: custom key-value pair works !!!
       xcclean
+    else
+      execute_for_all_envs{ osclean }
     end
   end
 
@@ -39,10 +41,14 @@ platform :ios do
   desc "Builds the project"
   lane :osbuild do
 
+    if ENV['TARGET_NAME'] != nil # OS: custom key-value pair works !!!
       xcbuild
       slack(
-        message: "App successfully built"
+        message: "App successfully built. Target: #{ENV['TARGET_NAME']}"
       )
+    else
+      execute_for_all_envs{ osbuild }
+    end
   end
 
 # TESTS
@@ -50,20 +56,17 @@ platform :ios do
     lane :test do
 
         slack(
-            message: "App is going to run 'scan' action",
+            message: "App is going to run 'scan' action"
         )
-
         scan(
           project: "KanjiList.xcodeproj",
           scheme: ENV['SCHEME'],
           clean: true,
           device: "iPhone 11"
         )
-
         slack(
             message: "App successfully runned tests"
         )
-
     end
 
 # CUSTOMIZED TESTS
@@ -120,7 +123,7 @@ platform :ios do
     xcclean
     increment_build_number
     # match(type: "appstore") # more information: https://codesigning.guide
-    gym # Build your app - more options available
+    gym(scheme: ENV['SCHEME'])# Build your app - more options available
     pilot
     # sh "your_script.sh"
     # You can also use other beta testing services here (run `fastlane actions`)
@@ -138,6 +141,20 @@ platform :ios do
     # frameit
   end
 
+
+# But what if you want to run all the commands for all the targets at once?
+# https://www.raywenderlich.com/233168-fastlane-tutorial-getting-started
+  def execute_for_all_envs
+    # 1
+    schemeList = Dir.glob(".env.*")
+    # 2
+    schemeList.each do |file|
+      # 3
+      Dotenv.overload(file)
+      # 4
+      yield
+    end
+  end
 
 
   ############################# POST ##############################
