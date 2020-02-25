@@ -20,7 +20,8 @@ platform :ios do
     #increment_build_number(
     #  xcodeproj: "KanjiList.xcodeproj"
     #)
-    ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
+
+    #ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
   end
 
 # ⚠️ Be aware: in lane any action (like slack) will be called, only if previouse action was successful
@@ -43,9 +44,7 @@ platform :ios do
 
     if ENV['TARGET_NAME'] != nil # OS: custom key-value pair works !!!
       xcbuild
-      slack(
-        message: "App successfully built. Target: #{ENV['TARGET_NAME']}"
-      )
+#slack( message: "App successfully built. Target: #{ENV['TARGET_NAME']}" )
     else
       execute_for_all_envs{ osbuild }
     end
@@ -55,18 +54,14 @@ platform :ios do
     desc "Runs all the tests"
     lane :test do
 
-        slack(
-            message: "App is going to run 'scan' action"
-        )
+        #slack(message: "App is going to run 'scan' action")
         scan(
           project: "KanjiList.xcodeproj",
           scheme: ENV['SCHEME'],
           clean: true,
           device: "iPhone 11"
         )
-        slack(
-            message: "App successfully runned tests"
-        )
+        #slack(message: "App successfully runned tests")
     end
 
 # CUSTOMIZED TESTS
@@ -82,6 +77,7 @@ platform :ios do
           unusedProjectName = get_info_plist_value(path: "KanjiList/Application/Info.plist", key: "CFBundleName")
           unusedIdentifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
 
+=begin
         slack(
             message: "App is going to build target: #{ENV['TARGET_NAME']}",
             payload: {
@@ -92,6 +88,7 @@ platform :ios do
             },
             channel: "#test_fastlane"
         )
+=end
 
         scan(project: "KanjiList.xcodeproj",
              code_coverage: true,
@@ -102,7 +99,7 @@ platform :ios do
              #xctestrun:"KanjiList/TestPlan.xctestrun",
              #devices: ["iPhone 11", "iPad Pro"])
         )
-
+=begin
         slack(
               message: "App successfully was built target : #{ENV['TARGET_NAME']} and ran tests",
               payload: {
@@ -112,6 +109,7 @@ platform :ios do
                     "Branch name:" =>  git_branch
               }
         )
+=end
 
     end
 
@@ -156,6 +154,19 @@ platform :ios do
     end
   end
 
+=begin
+This is a multi-line comment.
+  You can use this approach to make your comments
+  span multiple lines without placing hash marks at the start of each
+line.
+=end
+
+
+  desc "SetupJenkins for project"
+  lane :setupJenkins do
+    setup_jenkins
+  end
+
 
   ############################# POST ##############################
 
@@ -167,17 +178,18 @@ platform :ios do
       #  message: "Build #{build}"
       #)
     # This block is called, only if the executed lane was successful
-     slack(
-       message: "Successfully executed lane."
-     )
+
+     #slack(message: "Successfully executed lane.")
   end
 
   # ❌ This lane is called, only if the executed lane was failed
   error do |lane, exception|
+=begin
      slack(
        message: exception.message,
        success: false
      )
+=end
   end
 end
 
