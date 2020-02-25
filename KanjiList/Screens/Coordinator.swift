@@ -9,8 +9,8 @@
 import UIKit
 
 protocol Coordinator {
-    //OS: method for creation VC, set data (for datasource) into VC, title, additional properties and performing navigation
     var presenter: UINavigationController { get }
+    //OS: method for creation VC, set data (for datasource) into VC, title, additional properties and performing navigation
     func start()
 }
 
