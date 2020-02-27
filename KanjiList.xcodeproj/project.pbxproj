@@ -759,7 +759,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 49;
-				DEVELOPMENT_TEAM = 53APD5F9YQ;
+				DEVELOPMENT_TEAM = T4ZZK7HJ6V;
 				INFOPLIST_FILE = "$(SRCROOT)/KanjiList/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.personal.mortum;
@@ -777,7 +777,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 49;
-				DEVELOPMENT_TEAM = 53APD5F9YQ;
+				DEVELOPMENT_TEAM = T4ZZK7HJ6V;
 				INFOPLIST_FILE = "$(SRCROOT)/KanjiList/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.personal.mortum;
