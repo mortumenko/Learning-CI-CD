@@ -42,6 +42,7 @@ class KanjiListUITests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         //is it trigger?
+        //6.2 [works] How to make a Jenkins job to poll SCM periodically
     }
 
     func testExample() {
