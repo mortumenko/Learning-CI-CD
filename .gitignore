@@ -9,7 +9,6 @@
 
 ## Build generated
 build/
-.build/
 DerivedData/
 
 ## Various settings
@@ -57,8 +56,6 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
-fastlane/.env.BadTarget
-fastlane/.env.KanjiList
 
 report.html
 report.junit
