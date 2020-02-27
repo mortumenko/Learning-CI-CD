@@ -70,12 +70,6 @@ platform :ios do
 # run_tests # ⚠️ [15:49:35]: Could not find action, lane or variable 'run_tests'.
 
       if ENV['TARGET_NAME'] != nil # OS: custom key-value pair works !!!
-          ostest
-          #slack( message: "App successfully built. Target: #{ENV['TARGET_NAME']}" )
-      else
-          execute_for_all_envs{ ostest }
-      end
-
           #ensure_git_status_clean
 =begin
           targetName = ENV['TARGET_NAME']
@@ -83,8 +77,6 @@ platform :ios do
           build     = get_build_number(xcodeproj: "KanjiList.xcodeproj")
           unusedProjectName = get_info_plist_value(path: "KanjiList/Application/Info.plist", key: "CFBundleName")
           unusedIdentifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
-
-
         slack(
             message: "App is going to build target: #{ENV['TARGET_NAME']}",
             payload: {
@@ -117,6 +109,9 @@ platform :ios do
               }
         )
 =end
+      else
+          execute_for_all_envs{ ostest }
+      end
 
     end
 
