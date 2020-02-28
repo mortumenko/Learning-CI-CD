@@ -57,7 +57,7 @@ class KanjiStorage {
   }
   
   func allKanji() -> [Kanji] {
-    return allKanjiFromJSON.kanjiArray
+    return [Kanji]() //allKanjiFromJSON.kanjiArray
   }
   
   func kanjiForWord(_ word: String) -> [Kanji] {

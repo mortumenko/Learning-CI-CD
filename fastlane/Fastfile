@@ -59,7 +59,7 @@ platform :ios do
           project: "KanjiList.xcodeproj",
           scheme: ENV['SCHEME'],
           clean: true,
-          device: "iPhone 11"
+          device: "iPhone 8"
         )
         #slack(message: "App successfully runned tests")
     end
@@ -93,7 +93,7 @@ platform :ios do
              code_coverage: true,
              clean: true,
              scheme: ENV['SCHEME'],
-             device: "iPhone 11"
+             device: "iPhone 8"
              #workspace: "Example.xcworkspace"
              #xctestrun:"KanjiList/TestPlan.xctestrun",
              #devices: ["iPhone 11", "iPad Pro"])
