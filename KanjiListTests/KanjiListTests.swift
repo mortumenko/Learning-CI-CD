@@ -24,15 +24,15 @@ class KanjiListTests: XCTestCase {
     func testPassed() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        XCTAssert(1 == 1, "❌ Everything is bad")
+        XCTAssert(5 == 5, "❌ Everything is bad")
     }
     
     func testStorageFirstKanji() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         let storage = KanjiStorage()
-        let all = storage.allKanji()
-        let next = storage.kanjiForWord(all.first?.examples[0].word ?? "")
+        let allKanji = storage.allKanji()
+        let next = storage.kanjiForWord(allKanji.first?.examples[0].word ?? "")
         
         XCTAssert(next.count > 0, "❌ Everything is bad")
     }
