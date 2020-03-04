@@ -41,7 +41,9 @@ platform :ios do
 # BUILD
   desc "Builds the project"
   lane :osbuild do
-
+    # an example for direct terminal command
+    #sh "git checkout develop"
+    
     if ENV['TARGET_NAME'] != nil # OS: custom key-value pair works !!!
       xcbuild
 #slack( message: "App successfully built. Target: #{ENV['TARGET_NAME']}" )
