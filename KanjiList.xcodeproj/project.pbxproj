@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18BA64D920377D0300593D25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BA64D820377D0300593D25 /* LaunchScreen.storyboard */; };
+		33371E01241260A900B2FB23 /* BadTarget in Resources */ = {isa = PBXBuildFile; fileRef = 33371E00241260A900B2FB23 /* BadTarget */; };
 		338F321923FD99610052D66F /* KanjiListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338F321823FD99610052D66F /* KanjiListUITests.swift */; };
 		3394855723F6D08D00FCCAB8 /* KanjiListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3394855623F6D08D00FCCAB8 /* KanjiListTests.swift */; };
 		33AAD5B223F4451C002DBC5F /* WordBasedKanjiListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33AAD5B123F4451C002DBC5F /* WordBasedKanjiListCoordinator.swift */; };
@@ -74,6 +75,7 @@
 
 /* Begin PBXFileReference section */
 		18BA64D820377D0300593D25 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		33371E00241260A900B2FB23 /* BadTarget */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BadTarget; sourceTree = "<group>"; };
 		338F31EF23FD88B60052D66F /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = KanjiList/Sources/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		338F321623FD99610052D66F /* KanjiListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KanjiListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		338F321823FD99610052D66F /* KanjiListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanjiListUITests.swift; sourceTree = "<group>"; };
@@ -84,7 +86,6 @@
 		33AAD5B123F4451C002DBC5F /* WordBasedKanjiListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordBasedKanjiListCoordinator.swift; sourceTree = "<group>"; };
 		33CE120623FAD6B50043EE12 /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = TestPlan.xctestplan; path = KanjiList/Sources/TestPlan.xctestplan; sourceTree = SOURCE_ROOT; };
 		33EDAA1D23FEC9410073A720 /* The BadTarget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The BadTarget.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		33EDAA1E23FEC9420073A720 /* KanjiList copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "KanjiList copy-Info.plist"; path = "/Users/oleksandr_sulyma/Documents/Projects/my iOS Playground/not my example projects/Coordinator Tutorial for iOS/KanjiList-Materials/KanjiList-Starter/KanjiList copy-Info.plist"; sourceTree = "<absolute>"; };
 		33F0F65B23F4077900899BD8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		33F0F65D23F4082000899BD8 /* KanjiListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KanjiListViewController.xib; sourceTree = "<group>"; };
 		33F0F65E23F4082000899BD8 /* KanjiDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KanjiDetailViewController.xib; sourceTree = "<group>"; };
@@ -192,6 +193,7 @@
 		437264311FAD04F400A22393 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				33371E00241260A900B2FB23 /* BadTarget */,
 				437264321FAD04F400A22393 /* AppDelegate.swift */,
 				437264331FAD04F400A22393 /* Info.plist */,
 			);
@@ -247,7 +249,6 @@
 				3394855523F6D08D00FCCAB8 /* KanjiListTests */,
 				338F321723FD99610052D66F /* KanjiListUITests */,
 				C1345AFB1F9E08BA00612B82 /* Products */,
-				33EDAA1E23FEC9420073A720 /* KanjiList copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -420,6 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33EDAA1123FEC9410073A720 /* Main.storyboard in Resources */,
+				33371E01241260A900B2FB23 /* BadTarget in Resources */,
 				33EDAA1223FEC9410073A720 /* knji.json in Resources */,
 				33EDAA1323FEC9410073A720 /* KanjiDataTableViewCell.xib in Resources */,
 				33EDAA1423FEC9410073A720 /* KanjiListViewController.xib in Resources */,
@@ -614,9 +616,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 49;
+				CURRENT_PROJECT_VERSION = 53;
 				DEVELOPMENT_TEAM = T4ZZK7HJ6V;
-				INFOPLIST_FILE = "KanjiList copy-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/KanjiList/Application/Badtarget/Badtarget-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.personal.mortum.BadTarget;
 				PRODUCT_NAME = "The BadTarget";
@@ -630,9 +632,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 49;
+				CURRENT_PROJECT_VERSION = 53;
 				DEVELOPMENT_TEAM = T4ZZK7HJ6V;
-				INFOPLIST_FILE = "KanjiList copy-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/KanjiList/Application/Badtarget/Badtarget-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.personal.mortum.BadTarget;
 				PRODUCT_NAME = "The BadTarget";
@@ -758,7 +760,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 49;
+				CURRENT_PROJECT_VERSION = 53;
 				DEVELOPMENT_TEAM = T4ZZK7HJ6V;
 				INFOPLIST_FILE = "$(SRCROOT)/KanjiList/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -776,7 +778,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 49;
+				CURRENT_PROJECT_VERSION = 53;
 				DEVELOPMENT_TEAM = T4ZZK7HJ6V;
 				INFOPLIST_FILE = "$(SRCROOT)/KanjiList/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
