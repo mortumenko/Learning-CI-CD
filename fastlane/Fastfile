@@ -17,10 +17,7 @@ default_platform :ios
 
 platform :ios do
   before_all do
-    #increment_build_number(
-    #  xcodeproj: "KanjiList.xcodeproj"
-    #)
-
+    #increment_build_number( xcodeproj: "KanjiList.xcodeproj" )
     #ENV["SLACK_URL"] = "https://hooks.slack.com/services/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"
   end
 
@@ -46,7 +43,7 @@ platform :ios do
 
     if ENV['TARGET_NAME'] != nil # OS: custom key-value pair works !!!
       xcbuild
-#slack( message: "App successfully built. Target: #{ENV['TARGET_NAME']}" )
+      #slack( message: "App successfully built. Target: #{ENV['TARGET_NAME']}" )
     else
       execute_for_all_envs{ osbuild }
     end
@@ -95,10 +92,8 @@ platform :ios do
              code_coverage: true,
              clean: true,
              scheme: ENV['SCHEME'],
-             device: "iPhone 8"
-             #workspace: "Example.xcworkspace"
+             device: "iPhone 8" #devices: ["iPhone 11", "iPad Pro"])
              #xctestrun:"KanjiList/TestPlan.xctestrun",
-             #devices: ["iPhone 11", "iPad Pro"])
         )
 =begin
         slack(
@@ -205,12 +200,7 @@ swiftlint(
   # ❌ This lane is called, only if the executed lane was failed
   error do |lane, exception|
     notification(subtitle: "❌ Finished KanjiList lane with exception:", message: exception.message)
-=begin
-     slack(
-       message: exception.message,
-       success: false
-     )
-=end
+    #slack( message: exception.message, success: false )
   end
 end
 
