@@ -43,7 +43,7 @@ platform :ios do
   lane :osbuild do
     # an example for direct terminal command
     #sh "git checkout develop"
-    
+
     if ENV['TARGET_NAME'] != nil # OS: custom key-value pair works !!!
       xcbuild
 #slack( message: "App successfully built. Target: #{ENV['TARGET_NAME']}" )
@@ -197,12 +197,14 @@ swiftlint(
       #  message: "Build #{build}"
       #)
     # This block is called, only if the executed lane was successful
-
+    branch = "Current branch is: #{git_branch}"
+    notification(subtitle: "✅ Finished KanjiList's lane", message: "without issues. #{branch}")
      #slack(message: "Successfully executed lane.")
   end
 
   # ❌ This lane is called, only if the executed lane was failed
   error do |lane, exception|
+    notification(subtitle: "❌ Finished KanjiList lane with exception:", message: exception.message)
 =begin
      slack(
        message: exception.message,
