@@ -42,7 +42,9 @@ platform :ios do
 
     if ENV['TARGET_NAME'] != nil # OS: custom key-value pair works !!!
       xcbuild
-      #slack( message: "App successfully built. Target: #{ENV['TARGET_NAME']}" )
+      if ENV['SLACK_URL']
+        slack( message: "App successfully built. Target: #{ENV['TARGET_NAME']}" )
+      end
     else
       execute_for_all_envs{ osbuild }
     end
@@ -52,14 +54,18 @@ platform :ios do
     desc "Runs all the tests"
     lane :test do
 
-        #slack(message: "App is going to run 'scan' action")
+        if ENV['SLACK_URL']
+          slack(message: "App is going to run 'scan' action")
+        end
         scan(
           project: "KanjiList.xcodeproj",
           scheme: ENV['SCHEME'],
           clean: true,
           device: "iPhone 8"
         )
-        #slack(message: "App successfully runned tests")
+        if ENV['SLACK_URL']
+          slack(message: "App successfully runned tests")
+        end
     end
 
 # CUSTOMIZED TESTS
@@ -69,23 +75,24 @@ platform :ios do
 
       if ENV['TARGET_NAME'] != nil # OS: custom key-value pair works !!!
           #ensure_git_status_clean
-=begin
+
           targetName = ENV['TARGET_NAME']
-          version   = get_version_number(xcodeproj: "KanjiList.xcodeproj")
-          build     = get_build_number(xcodeproj: "KanjiList.xcodeproj")
-          unusedProjectName = get_info_plist_value(path: "KanjiList/Application/Info.plist", key: "CFBundleName")
-          unusedIdentifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
-        slack(
-            message: "App is going to build target: #{ENV['TARGET_NAME']}",
-            payload: {
-                "Version:" => version,
-                "Build:" => build,
-                "Target name: " => targetName,
-                "Branch name:" =>  git_branch
-            },
-            channel: "#test_fastlane"
-        )
-=end
+          if ENV['SLACK_URL']
+            version   = get_version_number(xcodeproj: "KanjiList.xcodeproj")
+            build     = get_build_number(xcodeproj: "KanjiList.xcodeproj")
+            unusedProjectName = get_info_plist_value(path: "KanjiList/Application/Info.plist", key: "CFBundleName")
+            unusedIdentifier = CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
+            slack(
+                message: "App is going to build target: #{ENV['TARGET_NAME']}",
+                payload: {
+                  "Version:" => version,
+                  "Build:" => build,
+                  "Target name: " => targetName,
+                  "Branch name:" =>  git_branch
+                },
+                channel: "#test_fastlane"
+            )
+          end
 
         scan(project: "KanjiList.xcodeproj",
              code_coverage: true,
@@ -94,8 +101,8 @@ platform :ios do
              device: "iPhone 8" #devices: ["iPhone 11", "iPad Pro"])
              #xctestrun:"KanjiList/TestPlan.xctestrun",
         )
-=begin
-        slack(
+        if ENV['SLACK_URL']
+          slack(
               message: "App successfully was built target : #{ENV['TARGET_NAME']} and ran tests",
               payload: {
                     "Build Date" => Time.new.to_s,
@@ -103,8 +110,8 @@ platform :ios do
                     "Target name: " => targetName,
                     "Branch name:" =>  git_branch
               }
-        )
-=end
+          )
+        end
       else
           execute_for_all_envs{ ostest }
       end
@@ -119,6 +126,7 @@ platform :ios do
     xcclean
     increment_build_number( xcodeproj: "KanjiList.xcodeproj" )
     # match(type: "appstore") # more information: https://codesigning.guide
+    # ⚠️ Gymfile: Since you might want to manually trigger a new build but don't want to specify all the parameters every time, you can store your defaults in a so called Gymfile.
     gym(scheme: ENV['SCHEME'], configuration: "Debug", output_directory: "ipa-storage", silent: true)# Build your app - more options available #skip_codesigning: true,
     #pilot
     # sh "your_script.sh"
@@ -193,13 +201,17 @@ swiftlint(
     # This block is called, only if the executed lane was successful
     branch = "Branch is: #{git_branch}"
     notification(subtitle: "✅ Finished KanjiList's lane", message: "without issues. #{branch}")
-     #slack(message: "Successfully executed lane.")
+    if ENV['SLACK_URL']
+      slack(message: "Successfully executed lane.")
+    end
   end
 
   # ❌ This lane is called, only if the executed lane was failed
   error do |lane, exception|
     notification(subtitle: "❌ Finished KanjiList lane with exception:", message: exception.message)
-    #slack( message: exception.message, success: false )
+    if ENV['SLACK_URL']
+      slack( message: exception.message, success: false )
+    end
   end
 end
 
