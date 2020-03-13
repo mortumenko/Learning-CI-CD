@@ -60,3 +60,6 @@ fastlane/test_output
 
 report.html
 report.junit
+
+
+vendor/bundle
