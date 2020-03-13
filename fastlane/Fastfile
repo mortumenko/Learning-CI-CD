@@ -25,6 +25,15 @@ platform :ios do
 # CLEAN
   desc "Cleans the project"
   lane :osclean do
+#    danger
+#=begin
+      danger(
+        danger_id: "theBuild",
+        dangerfile: "DangerFile", # current path works
+        github_api_token: ENV["DANGER_GITHUB_API_TOKEN"],
+        verbose: true
+      )
+#=end
 
     #if ENV['SCHEME'] != nil
     if ENV['TARGET_NAME'] != nil # OS: custom key-value pair works !!!
