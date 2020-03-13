@@ -12,7 +12,7 @@ declared_trivial = github.pr_title.include? "#trivial"
 
 message("Hello, Dangerfile is launched")
 
-warn("⚠️ Too big PR") if git.lines_of_code > 70
+warn("⚠️ Too big PR") if git.lines_of_code > 700
 
 # Don't let testing shortcuts get into master by accident
 fail("fdescribe left in tests") if `grep -r fdescribe specs/ `.length > 1
@@ -42,14 +42,14 @@ has_test_changes = !git.modified_files.grep(/KanjiListTests/).empty?
 
 # If changes are more than 10 lines of code, tests need to be updated too
 if has_app_changes && !has_test_changes && git.lines_of_code > 10
-  fail("Tests were not updated", sticky: false)
+  fail("❌ Tests were not updated", sticky: false)
 end
 
 # Info.plist file shouldn't change often. Leave warning if it changes.
 is_plist_change = git.modified_files.sort == ["KanjiList/Info.plist"].sort
 
 if !is_plist_change
-  warn "Plist changed, don't forget to localize your plist values"
+  warn "⚠️ Plist changed, don't forget to localize your plist values"
 end
 
 podfile_updated = !git.modified_files.grep(/Podfile/).empty?
