@@ -25,17 +25,16 @@ platform :ios do
 # CLEAN
   desc "Cleans the project"
   lane :osclean do
-#    danger
-#=begin
-      danger(
+
+    danger(
         danger_id: "theBuild",
         dangerfile: "DangerFile", # current path works
-        base: "develop", # A branch/tag/commit to use as the base of the diff. [master|dev|stable]
+        #base: "develop", # A branch/tag/commit to use as the base of the diff. [master|dev|stable]
         #github_api_token: ENV["DANGER_GITHUB_API_TOKEN"],
-        #pr: "https://github.com/danger/danger/pull/518",
+        #head: "Danger-2",
+        pr: "https://github.com/mortumenko/Learning-CI-CD/pull/2",
         verbose: true
-      )
-#=end
+    )
 
     #if ENV['SCHEME'] != nil
     if ENV['TARGET_NAME'] != nil # OS: custom key-value pair works !!!

@@ -1,6 +1,12 @@
 # Sometimes it's a README fix, or something like that - which isn't relevant for
 # including in a project's CHANGELOG for example
 
+#url_to_github_plugin = "https://github.com/danger/danger/blob/master/lib/danger/danger_core/plugins/dangerfile_github_plugin.rb"
+#danger.import_plugin(url_to_github_plugin)
+#danger.import_plugin("danger_support/dangerfile_github_plugin.rb") # noone error, but github method still is not recognized
+#danger.import_plugin("vendor/danger_support/dangerfile_github_plugin.rb") # error: [!] Invalid `Dangerfile` file: vendor/danger_support/dangerfile_github_plugin.rb doesn't contain any valid danger plugins.
+
+
 # Don't let testing shortcuts get into master by accident
 fail("fdescribe left in tests") if `grep -r fdescribe specs/ `.length > 1
 fail("fit left in tests") if `grep -r fit specs/ `.length > 1
@@ -12,7 +18,7 @@ fail("fit left in tests") if `grep -r fit specs/ `.length > 1
 declared_trivial = github.pr_title.include? "#trivial"
 
 # Make it more obvious that a PR is a work in progress and shouldn't be merged yet
-#warn("PR is classed as Work in Progress") if github.pr_title.include? "[WIP]" # [!] Invalid `Dangerfile` file: undefined local variable or method `github' for #<Danger::Dangerfile:0x00007ff20a1ffd48>
+warn("PR is classed as Work in Progress") if github.pr_title.include? "[WIP]" # [!] Invalid `Dangerfile` file: undefined local variable or method `github' for #<Danger::Dangerfile:0x00007ff20a1ffd48>
 =end
 
 
@@ -37,9 +43,11 @@ if git.modified_files.empty? && git.added_files.empty? && git.deleted_files.empt
 end
 
 # works bad
+=begin
 if !git.modified_files.include?("CHANGELOG.md")
   fail("Please include a CHANGELOG entry. \nYou can find it at [CHANGELOG.md](https://github.com/danger/danger/blob/master/CHANGELOG.md).", sticky: false)
 end
+=end
 
 has_app_changes = !git.modified_files.
 grep(/KanjiList/).empty?
@@ -52,7 +60,7 @@ end
 
 # OS: my rule
 if git.commits.any? { |c| c.message =~ /^Removed/ }
-  fail "⚠️ We found commit with specific word in message in this PR"
+  fail "❌ We found commit with specific word in message in this PR"
 end
 
 # Warn when there is a big PR
@@ -82,7 +90,7 @@ end
     end
 
 
-# MIXED CUTEGORIES rules:
+# MIXED CATEGORIES rules:
 
 
 

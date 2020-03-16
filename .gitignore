@@ -63,3 +63,5 @@ report.junit
 
 
 vendor/bundle
+# OS: My folder for attempt to enable GitHub support
+vendor/danger_support/* 
