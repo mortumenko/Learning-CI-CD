@@ -26,6 +26,7 @@ class KanjiListTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         XCTAssert(5 == 5, "❌ Everything is bad")
     }
+    // very tiny changes for creating test PR for Danger
     
     func testStorageFirstKanji() {
         // This is an example of a functional test case.
