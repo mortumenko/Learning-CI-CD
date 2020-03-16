@@ -70,3 +70,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   + 11. Add the following code to your setUp() method:
   + 12. In the terminal run fastlane snapshot.
  */
+
+
+/*
+ Setting Up snapshot
+  + 1. Create a new UI Test target in your Xcode project (See the top part of this article)
+  + 2. Run fastlane snapshot init in your project folder
+  + 3. Add the ./SnapshotHelper.swift file to your UI Test target (You can move the file anywhere you want)
+  + 4. Add a new Xcode scheme for the newly created UI Test target
+  + 5. Edit the scheme (of main target)
+  + 6. In the list on the left click "Build", and enable the checkbox under the "Run" column for your target.
+  + 7. Enable the Shared box of the newly created scheme
+8. (Objective C only) Add the bridging header to your test class.
+ #import "MYUITests-Swift.h"
+ The bridging header is named after your test target with -Swift.h appended.
+9. In your UI Test class, click the Record button on the bottom left and record your interaction
+10. To take a screenshot, call the following between interactions
+ Swift: snapshot("01LoginScreen")
+ Objective C: [Snapshot snapshot:@"01LoginScreen" timeWaitingForIdle:10];
+  + 11. Add the following code to your setUp() method:
+  + 12. In the terminal run fastlane snapshot.
+ */
+
+
+
+/*
+ Setting Up snapshot
+  + 1. Create a new UI Test target in your Xcode project (See the top part of this article)
+  + 2. Run fastlane snapshot init in your project folder
+  + 3. Add the ./SnapshotHelper.swift file to your UI Test target (You can move the file anywhere you want)
+  + 4. Add a new Xcode scheme for the newly created UI Test target
+  + 5. Edit the scheme (of main target)
+  + 6. In the list on the left click "Build", and enable the checkbox under the "Run" column for your target.
+  + 7. Enable the Shared box of the newly created scheme
+8. (Objective C only) Add the bridging header to your test class.
+ #import "MYUITests-Swift.h"
+ The bridging header is named after your test target with -Swift.h appended.
+9. In your UI Test class, click the Record button on the bottom left and record your interaction
+10. To take a screenshot, call the following between interactions
+ Swift: snapshot("01LoginScreen")
+ Objective C: [Snapshot snapshot:@"01LoginScreen" timeWaitingForIdle:10];
+  + 11. Add the following code to your setUp() method:
+  + 12. In the terminal run fastlane snapshot.
+ */
+
