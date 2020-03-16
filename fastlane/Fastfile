@@ -29,6 +29,7 @@ platform :ios do
     danger(
         danger_id: "theBuild",
         dangerfile: "DangerFile", # current path works
+        fail_on_errors: true,
         #base: "develop", # A branch/tag/commit to use as the base of the diff. [master|dev|stable]
         #github_api_token: ENV["DANGER_GITHUB_API_TOKEN"],
         #head: "Danger-2",

@@ -11,7 +11,9 @@
 fail("fdescribe left in tests") if `grep -r fdescribe specs/ `.length > 1
 fail("fit left in tests") if `grep -r fit specs/ `.length > 1
 
-
+# @example Show some message
+message = "### Proselint found issues\n\n"
+markdown message
 
 # GITHUB plugin using. ⚠️ ⚠️ ⚠️  DOESN'T WORK:
 =begin
@@ -19,19 +21,26 @@ declared_trivial = github.pr_title.include? "#trivial"
 
 # Make it more obvious that a PR is a work in progress and shouldn't be merged yet
 warn("PR is classed as Work in Progress") if github.pr_title.include? "[WIP]" # [!] Invalid `Dangerfile` file: undefined local variable or method `github' for #<Danger::Dangerfile:0x00007ff20a1ffd48>
-=end
+
 
 
 # Ensure a clean commits history
-#if git.commits.any? { |c| c.message =~ /^Merge branch '#{github.branch_for_base}'/ }
-  #fail "Please rebase to get rid of the merge commits in this PR"
-#end
+if git.commits.any? { |c| c.message =~ /^Merge branch '#{github.branch_for_base}'/ }
+  fail "Please rebase to get rid of the merge commits in this PR"
+end
 
 # Mainly to encourage writing up some reasoning about the PR, rather than
 # just leaving a title
-#if github.pr_body.length < 5
-  #fail "Please provide a summary in the Pull Request description"
-#end
+if github.pr_body.length < 5
+  fail "Please provide a summary in the Pull Request description"
+end
+
+# Mainly to encourage writing up some reasoning about the PR, rather than
+# just leaving a title
+if github.pr_body.length < 5
+  fail "Please provide a summary in the Pull Request description"
+end
+=end
 
 
 
