@@ -42,7 +42,7 @@ if github.pr_body.length < 5
 end
 =end
 
-
+message("Hello, Dangerfile is launched")
 
 # GIT plugin rules. ✅  ✅  ✅   WORK
 # full list of methods for GIT plugin see here: https://danger.systems/reference.html
@@ -74,7 +74,7 @@ end
 
 # Warn when there is a big PR
 
-message("Hello, Dangerfile is launched")
+
 warn("⚠️ Too big PR") if git.lines_of_code > 700
 
 # @example Info.plist file shouldn't change often. Leave warning if it changes.
@@ -86,7 +86,8 @@ end
 
 # @example Do something to all new and edited markdown files (files with specified type)
     markdowns = (git.added_files + git.modified_files)
-    warn "⚠️ We found markdown files" if markdowns.select{ |file| file.end_with? "md" }
+    warn "⚠️ We want to change markdown files" if markdowns.select{ |file| file.end_with? "md" }
+
 
 # @example Don't allow a file to be deleted
     deleted = git.deleted_files.include? "my/favourite.file"
@@ -98,6 +99,16 @@ end
       warn "The `Podfile` was updated"
     end
 
+# @example Don't allow such files to be added and pushed
+  git.added_files.each do |file|
+    warn "Fell into loop for credentials protection"
+    failure "❌  It is strictly forbidden to push provisions"  if file.end_with? "mobileprovision"
+    failure "❌  It is strictly forbidden to push certificates"  if file.end_with? "cer"
+    failure "❌  It is strictly forbidden to push public keys"  if file.end_with? "p12"
+  end
+
+  # works odd
+  #failure "❌  Don't push my provisions" if git.added_files.include? "mobileprovision"
 
 # MIXED CATEGORIES rules:
 
